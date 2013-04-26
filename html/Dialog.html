@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8"/>
     <title></title>
-    <link rel="stylesheet" href="../css/base.css" />
-    <link rel="stylesheet" href="../css/dialog.css" />
-    <link rel="stylesheet" href="../css/button.css" />
+    <link rel="stylesheet" href="../css/mbase.css" />
+    <link rel="stylesheet" href="../css/mdialog.css" />
+    <link rel="stylesheet" href="../css/mbutton.css" />
     <style>
         html,body{
             padding: 10px;
@@ -17,28 +17,28 @@
     </style>
 </head>
 <body>
-     <!--<div data-role="m_dialog" class="m_dialog bg_blue">
-         <div class="m_dialog_title">Your PC will restart in 15 minutes 38 seconds</div>
-         <div class="m_dialog_content">We highly recommend that you print this tutorial. Your PC will restart during the Windows 8 installation process, so having a printed copy will
+     <!--<div data-role="m-dialog" class="m-dialog bg-blue">
+         <div class="m-dialog-title">Your PC will restart in 15 minutes 38 seconds</div>
+         <div class="m-dialog-content">We highly recommend that you print this tutorial. Your PC will restart during the Windows 8 installation process, so having a printed copy will
              help you follow the steps if you're unable to return to this webpage.</div>
-         <div class="m_dialog_button_group">
-             <button class="bg_marine">Restart Now</button>
-             <button class="bg_marine">Cancle</button>
+         <div class="m-dialog-button-group">
+             <button class="bg-marine">Restart Now</button>
+             <button class="bg-marine">Cancle</button>
          </div>
      </div>-->
-     <button id='dialogit' class="m_button bg_color_green">Dialog IT</button>
+     <button id='dialogit' class="m-button bg-color-green">Dialog IT</button>
      <script src="../js/jquery-1.8.1.min.js"></script>
     <script>
         ;(function($){
             $.mDialog = function(title,message,fun){
                var html = [
-                    '<div class="m_dialog_cover"></div>',
-                    '<div data-role="m_dialog" class="m_dialog bg_color_blue">',
-                    '    <div class="m_dialog_title">{@title}</div>',
-                    '    <div class="m_dialog_content">{@message}</div>',
-                    '    <div class="m_dialog_button_group">',
-                    '        <button class="m_button bg_color_marine" data-role="ok">&nbsp;Ok&nbsp;</button>',
-                    '        <button class="m_button bg_color_marine" data-role="cancel">Cancle</button>',
+                    '<div class="m-dialog-cover"></div>',
+                    '<div data-role="m-dialog" class="m-dialog bg-color-blue">',
+                    '    <div class="m-dialog-title">{@title}</div>',
+                    '    <div class="m-dialog-content">{@message}</div>',
+                    '    <div class="m-dialog-button-group">',
+                    '        <button class="m-button bg-color-marine" data-role="ok">&nbsp;Ok&nbsp;</button>',
+                    '        <button class="m-button bg-color-marine" data-role="cancel">Cancle</button>',
                     '    </div>',
                     '</div>'
                ],

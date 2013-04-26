@@ -1,0 +1,51 @@
+.m-notice, .m-notice-warn{
+    width: 380px;
+    height: 70px;
+    position: absolute;
+    z-index: 9999999;
+    top: 1px;
+    right: 1px;
+    padding: 10px;
+    overflow: hidden;
+    font-size: 14px;
+}
+
+.m-notice-icon{
+    font-size: 55px;
+    margin-right: 10px;
+    float: left;
+    height: 50px;
+}
+.m-notice-sicon{
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    font-size: 30px;
+}
+.m-notice-title{
+    font-size: 16px;
+    font-weight: 600;
+    white-space: nowrap;
+    text-wrap: none;
+    margin-right: 10px;
+    overflow: hidden;
+}
+.m-notice-warn .m-notice-title{
+    color: #ffc40d;
+}
+.m-notice-message{
+    margin-right: 40px;
+    height: 40px;
+    line-height: 20px;
+    overflow: hidden;
+}
+.m-notice-close{
+    position: absolute;
+    right: 5px;
+    top: 2px;
+    cursor: default;
+}
+.m-notice-close:before{
+    font-size: 18px;
+    content: "\00d7";
+}

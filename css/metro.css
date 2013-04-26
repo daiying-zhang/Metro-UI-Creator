@@ -20,64 +20,64 @@ html,body{
     padding: 0;
 }
 
-.m_group_double{
+.m-group-double{
     width: 1040px;
     height: 520px;
     margin-right: 50px;
 }
-.m_group{
+.m-group{
     width: 520px;
     height: 520px;
     margin-right: 50px;
 }
 
 /*==头部样==*/
-.m_header{
+.m-header{
     height: 80px;
     line-height: 80px;
 }
 h1.start{
     font-size: 50px;
 }
-h2.user_info{
+h2.user-info{
     font-size: 28px;
 }
-.user_face{
+.user-face{
     width: 40px;
     height: 40px;
     top: 10px;
 }
 
-.icon_f{
+.icon-f{
     font-family: "IcoMoon",sans-serif;
 }
-.icon_font{
+.icon-font{
     font-family: "IcoMoon",sans-serif;
     font-size: 60px;
     line-height: 85px;
     text-align: center;
     display: block;
 }
-.m_content{
+.m-content{
     overflow: hidden;
 }
-.m_content li{
+.m-content li{
     margin: 5px;
     float: left;
 }
-.ie6 .m_content li{
+.ie6 .m-content li{
     display: inline;
 }
-.m_content_wraper{
+.m-content-wraper{
     width: 2800px;
 }
-.m_container{
+.m-container{
     height: 540px;
     width: 100%;
 }
 
 /*==底部样式==*/
-footer.m_footer{
+footer.m-footer{
     left: 0;
     bottom: 0;
     height: 20px;

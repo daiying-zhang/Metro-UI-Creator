@@ -1,0 +1,53 @@
+.m-button,.m-button-icon{
+    padding: 5px 5px;
+    margin: 0 5px;
+    border: 0;
+    color: white;
+    font-size: 16px;
+    min-width: 100px;
+    line-height: 20px;
+}
+.m-button-icon{
+    min-width: 100px;
+    display: inline-block;
+    padding: 3px 3px;
+    text-align: center;
+    line-height: 24px;
+}
+.m-button-icon img{
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 2px;
+    margin-top: -3px;
+}
+.m-button:hover,.m-button-icon:hover{
+    outline: 2px white solid;
+}
+[class*="m-button"]{
+    text-decoration: none;
+}
+[class*="m-button-i"].big{
+    font-size: 55px;
+}
+[class*="m-button-i"].middle{
+    font-size: 40px;
+}
+[class*="m-button-i"].small{
+    font-size: 25px;
+}
+.m-button-i-back:after{
+    font-family: icomoon;
+    content: "\e069";
+}
+.m-button-i-forward:after{
+    font-family: icomoon;
+    content: "\e067";
+}.m-button-i-up:after{
+    font-family: icomoon;
+    content: "\e066";
+}
+.m-button-i-down:after{
+    font-family: icomoon;
+    content: "\e068";
+}

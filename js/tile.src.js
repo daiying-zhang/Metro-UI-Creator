@@ -32,7 +32,7 @@
     function TileSlider(ele,settings){
         this.obj = ele;
         this.settings = settings;
-        this.tileCount = this.obj.find('.tile_content').length;
+        this.tileCount = this.obj.find('.tile-content').length;
         this.slideTimer = null;
         this.slideTop = 0;
         this._start();
@@ -45,7 +45,7 @@
             var th = _this.settings.tileHeight;
             _this.slideTop += th;
             (_this.slideTop >= _this.tileCount * th) && (_this.slideTop = 0);
-            this.obj.find('.tile_content:first').animate({
+            this.obj.find('.tile-content:first').animate({
                 'margin-top': -_this.slideTop +'px'
             } ,_this.slideTop == 0 ? 500 :_this.settings.speed);
         },

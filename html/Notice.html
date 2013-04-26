@@ -14,9 +14,9 @@
 <head>
     <meta charset="utf-8"/>
     <title></title>
-    <link rel="stylesheet" href="../css/base.css" />
-    <link rel="stylesheet" href="../css/notice.css" />
-    <link rel="stylesheet" href="../css/button.css" />
+    <link rel="stylesheet" href="../css/mbase.css" />
+    <link rel="stylesheet" href="../css/mnotice.css" />
+    <link rel="stylesheet" href="../css/mbutton.css" />
     <style>
         body{
             padding: 10px;
@@ -26,25 +26,25 @@
     </style>
 </head>
 <body>
-<div data-role="m_notice" class="m_notice_warn bg_color_darkred fg_color_white" style="left:10px;top: 50px">
-    <div class="m_notice_icon icon_font">&#xe126;</div>
-    <div class="m_notice_title">Your PC will restart in 15 minutes</div>
-    <div class="m_notice_message">
+<div data-role="m-notice" class="m-notice-warn bg-color-darkred fg-color-white" style="left:10px;top: 50px">
+    <div class="m-notice-icon icon-font">&#xe126;</div>
+    <div class="m-notice-title">Your PC will restart in 15 minutes</div>
+    <div class="m-notice-message">
         We highly recommend that you print this tutorial. Your PC will restart during the Windows 8 ...
     </div>
-    <div class="m_notice_sicon icon_font">&#xe129;</div>
-    <div class="m_notice_close"></div>
+    <div class="m-notice-sicon icon-font">&#xe129;</div>
+    <div class="m-notice-close"></div>
 </div>
-<div data-role="m_notice" class="m_notice bg_color_green fg_color_white" style="left:420px;top: 50px">
-    <div class="m_notice_title">Your PC will restart in 15 minutes 38 seconds</div>
-    <div class="m_notice_message">
+<div data-role="m-notice" class="m-notice bg-color-green fg-color-white" style="left:420px;top: 50px">
+    <div class="m-notice-title">Your PC will restart in 15 minutes 38 seconds</div>
+    <div class="m-notice-message">
         We highly recommend that you print this tutorial. Your PC will restart during the Windows 8 ...
     </div>
-    <div class="m_notice_sicon icon_font">&#xe1a5;</div>
-    <div class="m_notice_close"></div>
+    <div class="m-notice-sicon icon-font">&#xe1a5;</div>
+    <div class="m-notice-close"></div>
 </div>
-<button id='noticeit_warn' class="m_button bg_color_blue">Warn Notice</button>
-<button id='noticeit_info' class="m_button bg_color_blue">Info Notice</button>
+<button id='noticeit-warn' class="m-button bg-color-blue">Warn Notice</button>
+<button id='noticeit-info' class="m-button bg-color-blue">Info Notice</button>
 <script src="../js/jquery-1.8.1.min.js"></script>
 <script>
     ;(function($){
@@ -96,25 +96,25 @@
             var settings = $.extend({type:'info',fun:null,duration:8000},opt), //默认配置
                 /*DOM结构*/
                 html = [
-                    '<div data-role="m_notice" class="m_notice bg_color_green fg_color_white">',
-                    '   <div class="m_notice_title">{@title}</div>',
-                    '   <div class="m_notice_message">',
+                    '<div data-role="m-notice" class="m-notice bg-color-green fg-color-white">',
+                    '   <div class="m-notice-title">{@title}</div>',
+                    '   <div class="m-notice-message">',
                     '        {@message}',
                     '   </div>',
-                    '   <div class="m_notice_sicon icon_font fg_color_white">{@sicon}</div>',
-                    '   <div class="m_notice_close"></div>',
+                    '   <div class="m-notice-sicon icon-font fg-color-white">{@sicon}</div>',
+                    '   <div class="m-notice-close"></div>',
                     '</div>'
                 ],
                 /*渲染DOM*/
                 notice = $(html.join('').replace(/{@message}/g,message).replace(/{@title}/,title)),
                 /*关闭按钮*/
-                closeBtn = notice.find('.m_notice_close'),
+                closeBtn = notice.find('.m-notice-close'),
                 /*右下角图标*/
-                sicon = notice.find('.m_notice_sicon');
+                sicon = notice.find('.m-notice-sicon');
             if(settings.type == 'warning'){
-                notice.find('.m_notice_title').before('<div class="m_notice_icon icon_font">&#xe126;</div>');
+                notice.find('.m-notice-title').before('<div class="m-notice-icon icon-font">&#xe126;</div>');
                 sicon.html('&#xe129;');
-                notice.attr('class','m_notice_warn bg_color_darkred  fg_color_white')
+                notice.attr('class','m-notice-warn bg-color-darkred  fg-color-white')
             }else if(settings.type=="info"){
                 sicon.html('&#xe1a5;');
             }
@@ -151,7 +151,7 @@
         }
 
         //警告框
-        $('#noticeit_warn').click(function(){
+        $('#noticeit-warn').click(function(){
             $.MetroUI.mNotice(
                     'Your PC is out of protect',
                     'Keep your PC protected with the latest security updatesarrow Get a free PC...'
@@ -165,7 +165,7 @@
             )
         })
         //信息提示框
-        $('#noticeit_info').click(function(){
+        $('#noticeit-info').click(function(){
             $.MetroUI.mNotice(
                     'Your PC will restart in 15 minutes',
                     'We highly recommend that you print this tutorial. Your PC will ' +
