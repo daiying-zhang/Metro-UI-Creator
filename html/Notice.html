@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html class="ie6">
+<![endif]-->
+<!--[if IE 7]>
+<html class="ie7">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie8">
+<![endif]-->
+<!--[if !IE]>
+<html>
+<![endif]-->
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/notice.css" />
+    <link rel="stylesheet" href="css/button.css" />
+    <style>
+        body{
+            padding: 10px;
+            margin: 0;
+            background: burlywood;
+        }
+    </style>
+</head>
+<body>
+<div data-role="m_notice" class="m_notice_warn bg_color_darkred fg_color_white" style="left:10px;top: 50px">
+    <div class="m_notice_icon icon_font">&#xe126;</div>
+    <div class="m_notice_title">Your PC will restart in 15 minutes</div>
+    <div class="m_notice_message">
+        We highly recommend that you print this tutorial. Your PC will restart during the Windows 8 ...
+    </div>
+    <div class="m_notice_sicon icon_font">&#xe129;</div>
+    <div class="m_notice_close"></div>
+</div>
+<div data-role="m_notice" class="m_notice bg_color_green fg_color_white" style="left:420px;top: 50px">
+    <div class="m_notice_title">Your PC will restart in 15 minutes 38 seconds</div>
+    <div class="m_notice_message">
+        We highly recommend that you print this tutorial. Your PC will restart during the Windows 8 ...
+    </div>
+    <div class="m_notice_sicon icon_font">&#xe1a5;</div>
+    <div class="m_notice_close"></div>
+</div>
+<button id='noticeit_warn' class="m_button bg_color_blue">Warn Notice</button>
+<button id='noticeit_info' class="m_button bg_color_blue">Info Notice</button>
+<script src="js/jquery-1.8.1.min.js"></script>
+<script>
+    ;(function($){
+        $.MetroUI = $.MetroUI || {};
+        /**
+         * 扩展数组方法：获取元素的位置，从0开始
+         * @name Array.prototype.indexOf
+         * @constructor
+         * @param {*} 要查找位置的元素
+         * @return {Number} 元素位置，不存在返回-1
+         */
+        if(typeof Array.prototype.indexOf !== 'function'){
+            Array.prototype.indexOf = function(ele){
+                for(var i=0;i<this.length;i++){
+                    if(this[i] === ele){
+                        return i;
+                    }
+                }
+                return -1
+            }
+        }
+        /**
+         * 扩展数组方法：删除对应元素
+         * @name Array.prototype.remove
+         * @constructor
+         * @param  {*} 要删除的元素
+         * @return {Number} 被删除的元素，没有对应元素无返回(undefined)
+         */
+        if(typeof Array.prototype.remove !== 'function'){
+            Array.prototype.remove = function(ele){
+                if(this.indexOf(ele) >= 0) {
+                    return this.splice(this.indexOf(ele),1)
+                }
+            }
+        }
+
+        /**
+         * 消息提示插件
+         * @name $.MetroUI.mNotice
+         * @constructor
+         * @param {String} title 提示框标题
+         * @param {String} message 提示信息
+         * @param {Object} [opt] 配置参数
+         * @param {Function} [opt.type="info"] 提示框类型"info"|"warning"
+         * @param {Function} [opt.fun=null] 提示框关闭后执行的回调函数
+         * @param {Number} [opt.duration=8000] 提示框显示的时间(单位：ms)，超过这个时间后自动关闭
+         */
+        $.MetroUI.mNotice = function(title,message,opt){
+            var settings = $.extend({type:'info',fun:null,duration:8000},opt), //默认配置
+                /*DOM结构*/
+                html = [
+                    '<div data-role="m_notice" class="m_notice bg_color_green fg_color_white">',
+                    '   <div class="m_notice_title">{@title}</div>',
+                    '   <div class="m_notice_message">',
+                    '        {@message}',
+                    '   </div>',
+                    '   <div class="m_notice_sicon icon_font fg_color_white">{@sicon}</div>',
+                    '   <div class="m_notice_close"></div>',
+                    '</div>'
+                ],
+                /*渲染DOM*/
+                notice = $(html.join('').replace(/{@message}/g,message).replace(/{@title}/,title)),
+                /*关闭按钮*/
+                closeBtn = notice.find('.m_notice_close'),
+                /*右下角图标*/
+                sicon = notice.find('.m_notice_sicon');
+            if(settings.type == 'warning'){
+                notice.find('.m_notice_title').before('<div class="m_notice_icon icon_font">&#xe126;</div>');
+                sicon.html('&#xe129;');
+                notice.attr('class','m_notice_warn bg_color_darkred  fg_color_white')
+            }else if(settings.type=="info"){
+                sicon.html('&#xe1a5;');
+            }
+            // 自动填补空白区域开始
+            var index = $.MetroUI.mNotice.count = $.MetroUI.mNotice.count || [0];
+            for(var i=0;i<index.slice(-1);i++){
+                if(index[i] != i){ //没有i
+                    index.splice(i,0,i); //插入i
+                    break;
+                }
+            }
+            if(i==index.slice(-1)){
+                index.push(i+1)
+            }
+            notice.css('top',i * 100 + 'px');
+            // 自动填补空白结束
+
+            $('body').append(notice);
+            // 关闭提示框
+            closeBtn.bind('click',function(e){
+                clearTimeout(timer);
+                index.remove(i);
+                notice.fadeOut(500,function(){
+                    notice.remove();
+                    notice = null;
+                    settings.fun && settings.fun();
+                });
+            });
+
+            //自动隐藏
+            var timer = setTimeout(function(){
+                closeBtn.click()
+            },settings.duration)
+        }
+
+        //警告框
+        $('#noticeit_warn').click(function(){
+            $.MetroUI.mNotice(
+                    'Your PC is out of protect',
+                    'Keep your PC protected with the latest security updatesarrow Get a free PC...'
+                    ,{
+                        /*fun:function(){
+                            console.log('Close the notice!');
+                        },*/
+                        type:'warning',
+                        duration:15000
+                    }
+            )
+        })
+        //信息提示框
+        $('#noticeit_info').click(function(){
+            $.MetroUI.mNotice(
+                    'Your PC will restart in 15 minutes',
+                    'We highly recommend that you print this tutorial. Your PC will ' +
+                            'restart during the Windows 8 ...'
+            )
+        })
+
+        setTimeout(function(){
+            //信息提示框
+            $.MetroUI.mNotice(
+                    'A Infomation Notice Dialog...',
+                    'This is a infomation notice dialog that create by code!'
+            )
+        },3000);
+
+    })(jQuery)
+</script>
+</body>
+</html>

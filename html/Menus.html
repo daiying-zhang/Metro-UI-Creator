@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html class="ie6">
+<![endif]-->
+<!--[if IE 7]>
+<html class="ie7">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie8">
+<![endif]-->
+<!--[if !IE]>
+<html>
+<![endif]-->
+<head>
+    <meta charset="utf-8"/>
+    <title>DropDown Menus</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/menus.css" />
+    <style>
+        html,body{
+            font-family: 'Segoe UI Light', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            margin: 0;
+            padding: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <ul class="m_menus" style="display: block; position: static">
+        <li><a href="#">Items One</a></li>
+        <li><a href="#">Items Two</a></li>
+        <li><a href="#">Items Three</a></li>
+        <li><a href="#">Items Foure</a></li>
+        <li><a href="#">Items Five</a></li>
+        <li class="separate"></li>
+        <li><a href="#">Others Group</a></li>
+    </ul>
+    <div class="m_nav w1000 fg_color_white">
+        <!--<div class="m_logo fl icon_font"><img src="images/face.png" /></div>-->
+        <div class="m_logo fl icon_font">&#xe0b5;</div>
+        <h1 class="m_site_name fl">
+            Sanjh.cn
+        </h1>
+        <ul class="fl">
+            <li><a href="###">Home</a></li>
+            <li data-role="m_menu_trigger">About
+                <ul class="m_menus bg_color_white green">
+                    <li><a href="#">About Me</a></li>
+                    <li><a href="#">About Metro UI</a></li>
+                    <li><a href="#">Contact Me</a></li>
+                    <li><a href="#">Bug Report</a></li>
+                    <li><a href="#">Suggestion</a></li>
+                    <li class="separate"></li>
+                    <li><a href="#">Build Site Now</a></li>
+                </ul>
+            </li>
+            <li data-role="m_menu_trigger">Plugin
+                <ul class="m_menus bg_color_white green">
+                    <li><a href="#">jQuery.JQDrag</a></li>
+                    <li><a href="#">jQuery.JScrollbar</a></li>
+                    <li><a href="#">jQuery.ColorIt</a></li>
+                    <li class="separate"></li>
+                    <li><a href="#">More Plugins</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+<script src="js/jquery-1.8.1.min.js"></script>
+<script>
+    ;(function($){
+        $.fn.mMenu = function(){
+            return this.each(function(){
+                var $this = $(this),
+                    closeAllMenus = function(){
+                        $('.m_menus:visible').each(function(i){
+                            var _self = $(this);
+                            if(_self.css('position') !== 'static'){
+                                    _self.slideUp('fast');
+                            }
+                        });
+                    },
+                    /**
+                     * 显示子菜单
+                     * @param holder 点击的一个菜单项或者是其他的触发器，必须有data-role="m_menu_trigger"属性
+                    */
+                    showSubMenu = function(holder){
+                        var submenu = holder.find('.m_menus:first');
+                        if(submenu && submenu.css('display') === 'block'){ //菜单已经显示，则关闭菜单
+                            submenu.slideUp('fast');
+                        }else{
+                            submenu && submenu.slideDown('fast'); //显示子菜单
+                        }
+                    }
+                ;
+                $this.bind('click.mmenu',function(e){
+                    e.stopPropagation();
+                    closeAllMenus();
+                    showSubMenu($this);
+                })
+                $('html').bind('click.mmenu',function(e){
+                    closeAllMenus()
+                })
+            })
+        }
+        $('[data-role="m_menu_trigger"]').each(function(){
+            $(this).mMenu();
+        })
+    })(jQuery)
+</script>
+</body>
+</html>

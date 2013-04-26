@@ -1,0 +1,37 @@
+.m_dialog{
+    width: 100%;
+    height: 220px;
+    position: absolute;
+    z-index: 9999999;
+    margin-top: -110px;
+    margin-left: -50%;
+    top: 50%;
+    left: 50%;
+    color: white;
+}
+.m_dialog_cover{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 9999998;
+    left: 0;
+    top:0;
+    background: gray;
+    background: rgba(0,0,0,0.6);
+
+}
+.m_dialog_title,.m_dialog_content,.m_dialog_button_group{
+    width: 700px;
+    margin: 0 auto;
+    padding: 5px 0;
+}
+.m_dialog_title{
+    font-size: 25px;
+    font-weight: 700;
+}
+.m_dialog_content{
+    height: 110px;
+}
+.m_dialog_button_group{
+    text-align: right;
+}

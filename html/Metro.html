@@ -1,0 +1,331 @@
+﻿<!DOCTYPE html>
+<!--[if IE 6]>
+<html class="ie6">
+<![endif]-->
+<!--[if IE 7]>
+<html class="ie7">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie8">
+<![endif]-->
+<!--[if !IE]>
+<html>
+<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/metro.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/tile.css" />
+    <style>
+        body{
+            color: white;
+        }
+    </style>
+    <title>Metro UI Demo</title>
+    <!--[if lt IE 9]>
+    <script>
+        var tags = ['article','section','hgroup','nav','header','footer'],
+                i = 0,
+                len = tags.length;
+        for(;i<len;i++){
+            document.createElement(tags[i]);
+        }
+    </script>
+    <style>
+        article,section,hgroup,nav,header,footer{
+            display:block;
+        }
+    </style>
+    <![endif]-->
+</head>
+<body>
+    <header class="clearfix">
+        <hgroup class="m_header">
+            <h1 class="start ml10 fl">Start</h1>
+            <h2 class="user_info mr10 fr">SanJH.cn<img src="images/face.png" class="user_face ml10 pr" /></h2>
+        </hgroup>
+    </header>
+    <section class="m_container" id="js_m_container">
+        <div class="m_content_wraper">
+            <article class="m_group_double oh fl">
+                <!--<header>
+                </header>-->
+                <ul class="m_content">
+                    <li class="tile_double  bg_color_red">
+                        <a class="tile_content" href="http://www.sanjh.cn" target="_blank">
+                            <span class="icon_font">&#xe141;</span>
+                            <span class="tile_title">http://www.sanjh.cn</span>
+                        </a>
+                    </li>
+                    <li class="tile bg_color_blue">
+                        <a class="tile_content" href="javascript:void(0);">
+                            <span class="icon_font">
+                                <img src="images/ie10.png"/>
+                            </span>
+                            <span class="tile_title">Internet Explorer</span>
+                        </a>
+                    </li>
+                    <li class="tile_double bg_color_purple">
+                        <a class="tile_content" href="javascript:void(0);">
+                            <span class="icon_font">&#x002a;</span>
+                            <span class="tile_title">Camera</span>
+                            <span class="tile_count">25</span>
+                        </a>
+                    </li>
+                    <li class="tile_double bg_color_teal" data-role="tile-slider">
+                        <a class="tile_content" href="javascript:void(0);" class="tile_content">
+                            <p>From: <strong>97532151@qq.com</strong></p>
+
+                            <p>Hello,daiying.zhang welcome to join sanjh.cn</p>
+                        </a>
+                        <a class="tile_content" href="javascript:void(0);" class="tile_content">
+                            <p>From: <strong>daiying.zhang@qunar.com</strong></p>
+
+                            <p>Here is the code about the <strong>jquery.jscrollbar</strong> plugin and the ...</p>
+                        </a>
+                        <span>
+                            <span class="tile_title icon_f title_title_icon">&#xe165;</span>
+                            <span class="tile_count">2</span>
+                        </span>
+                    </li>
+                    <li class="tile bg_color_pink">
+                        <a class="tile_content" href="javascript:void(0);">
+                            <span class="icon_font">&#x0028;</span>
+                            <span class="tile_title">Photo</span>
+                        </a>
+                    </li>
+                    <li class="tile_double bg_color_blue">
+                        <a class="tile_content" href="javascript:void(0);">
+                            <span class="icon_font">&#xe092;</span>
+                            <span class="tile_title">Tiwwer</span>
+                        </a>
+                    </li>
+                    <li class="tile_double bg_color_orange">
+                        <a class="tile_content" href="javascript:void(0);">
+                            <span class="icon_font">&#xe08e;</span>
+                            <span class="tile_title">Google+</span>
+                        </a>
+                    </li>
+                    <li class="tile bg_color_lime">
+                        <a class="tile_content" href="javascript:void(0);">
+                            <span class="icon_font">&#xe0a5;</span>
+                            <span class="tile_title">GitHub</span>
+                        </a>
+                    </li>
+                    <li class="tile bg_color_magenta">
+                        <a class="tile_content" href="javascript:void(0);">
+                            <span class="icon_font">&#xe0a9;</span>
+                            <span class="tile_title">WordPress</span>
+                        </a>
+                    </li>
+                    <li class="tile_double bg_color_red">
+                        <a class="tile_content" href="javascript:void(0);">
+                            <span class="icon_font">&#xe23d;</span>
+                            <span class="tile_title">Weather</span>
+                        </a>
+                    </li>
+                    <li class="tile_double bg_color_green">
+                        <a class="tile_content" href="javascript:void(0);">
+                            <span class="icon_font">&#xe159;</span>
+                            <span class="tile_title">Map</span>
+                        </a>
+                    </li>
+
+                    <li class="tile bg_color_red">
+                        <a class="tile_content" href="javascript:void(0);">
+                            <span class="icon_font">&#xe15c;</span>
+                            <span class="tile_title">通讯录</span>
+                        </a>
+                    </li>
+                    <li class="tile bg_color_magenta">
+                        <a class="tile_content" href="javascript:void(0);">
+                            <span class="icon_font">&#x003e;</span>
+                            <span class="tile_title">计算器</span>
+                        </a>
+                    </li>
+                    <li class="tile_double bg_color_purple">
+                        <a class="tile_content" href="javascript:void(0);">
+                            <span class="icon_font">
+                                 <img src="images/chrome.png"/>
+                            </span>
+                            <span class="tile_title">Google Chrome</span>
+                        </a>
+                    </li>
+                    <li class="tile_double" id="blogger" data-role="tile-slider">
+                        <a class="bg_color_red tile_content" href="http://sanjh.cn/0/">
+                            <span class="icon_font">&#xe0ac;</span>
+                            <span class="tile_title">Blogger</span>
+                            <span class="tile_count">3</span>
+                        </a>
+                        <a class="bg_color_blue tile_content" href="http://sanjh.cn/1/">
+                            <span>
+                                <p><strong>Blogger添加Google+评论功能</strong></p>
+                                <p>
+                                    4月19日消息,据国外媒体报道,Google周四宣布在旗下的Blogger服务中嵌入Google+评论功能 ...
+                                </p>
+                            </span>
+                            <span class="tile_title">News One</span>
+                            <span class="tile_count">1</span>
+                        </a>
+                        <a class="bg_color_green tile_content" href="http://sanjh.cn/2/">
+                            <p><strong>Google Blogger</strong>添加Google+评论功能</p>
+                            <span class="tile_title">News Two</span>
+                            <span class="tile_count">2</span>
+                        </a>
+                        <a class="bg_color_red tile_content" href="http://sanjh.cn/3/">
+                            <p><strong>Google Blogger</strong>添加Google+评论功能</p>
+                            <span class="tile_title">News Three</span>
+                            <span class="tile_count">3</span>
+                        </a>
+                    </li>
+                    <li class="tile_double tile_desktop">
+                        <a class="tile_content" href="javascript:void(0);">
+                            <span class="icon_font"></span>
+                            <span class="tile_title">桌面</span>
+                        </a>
+                    </li>
+                    <li class="tile_double bg_color_lime">
+                        <a class="tile_content" href="javascript:void(0);">
+                            <span class="icon_font">&#xe0b1;</span>
+                            <span class="tile_title">Amazon</span>
+                        </a>
+                    </li>
+                    <li class="tile bg_color_pink">
+                        <a class="tile_content" href="javascript:void(0);">
+                            <span class="icon_font">
+                                <img src="images/evernote.png"/>
+                            </span>
+                            <span class="tile_title">Evernote</span>
+                        </a>
+                    </li>
+                    <li class="tile bg_color_red">
+                        <a class="tile_content" href="javascript:void(0);">
+                            <span class="icon_font">&#x0070;</span>
+                            <span class="tile_title">Setting</span>
+                        </a>
+                    </li>
+                    <li class="tile bg_color_orange">
+                        <a class="tile_content" href="javascript:void(0);">
+                            <span class="icon_font">&#xe090;</span>
+                            <span class="tile_title">FaceBook</span>
+                            <span class="tile_count">13</span>
+                        </a>
+                    </li>
+                    <li class="tile bg_color_blue">
+                        <a class="tile_content" href="javascript:void(0);">
+                            <span class="icon_font">&#xe0b8;</span>
+                            <span class="tile_title">Skype</span>
+                        </a>
+                    </li>
+                </ul>
+            </article>
+            <article class="m_group oh fl">
+                <!--<header>
+                </header>-->
+                <ul class="m_content">
+
+                    <li class="tile_double bg_color_pink"></li>
+                    <li class="tile_double bg_color_blue"></li>
+                    <li class="tile_double bg_color_orange"></li>
+                    <li class="tile bg_color_lime"></li>
+                    <li class="tile bg_color_magenta"></li>
+                    <li class="tile_double bg_color_purple"></li>
+                    <li class="tile_double bg_color_teal"></li>
+                    <li class="tile_double bg_color_pink"></li>
+                    <li class="tile bg_color_blue"></li>
+                </ul>
+            </article>
+            <article class="m_group oh fl">
+                <!--<header>
+                </header>-->
+                <ul class="m_content">
+
+                    <li class="tile_double bg_color_pink"></li>
+                    <li class="tile_double bg_color_blue"></li>
+                    <li class="tile_double bg_color_orange"></li>
+                    <li class="tile bg_color_lime"></li>
+                    <li class="tile bg_color_magenta"></li>
+                    <li class="tile_double bg_color_purple"></li>
+                    <li class="tile_double bg_color_teal"></li>
+                    <li class="tile_double bg_color_pink"></li>
+                    <li class="tile bg_color_blue"></li>
+                </ul>
+            </article>
+            <article class="m_group oh fl">
+                <!--<header>
+                </header>-->
+                <ul class="m_content">
+
+                    <li class="tile_double bg_color_pink"></li>
+                    <li class="tile_double bg_color_blue"></li>
+                    <li class="tile_double bg_color_orange"></li>
+                    <li class="tile bg_color_lime"></li>
+                    <li class="tile bg_color_magenta"></li>
+                    <li class="tile_double bg_color_purple"></li>
+                    <li class="tile_double bg_color_teal"></li>
+                    <li class="tile_double bg_color_pink"></li>
+                    <li class="tile bg_color_blue">
+                        <a href="javascript:void(0);">
+                            <span class="tile_content icon_font">&#xe069;</span>
+                            <span class="tile_title">Go Back</span>
+                        </a>
+                    </li>
+                    <li class="tile bg_color_blue">
+                        <a href="javascript:void(0);">
+                            <span class="tile_content icon_font">&#xe067;</span>
+                            <span class="tile_title">Next</span>
+                        </a>
+                    </li>
+                </ul>
+            </article>
+        </div>
+    </section>
+    <footer class="m_footer pa">
+        By sanjh.cn&nbsp;
+    </footer>
+    <script src="js/jquery-1.8.1.min.js"></script>
+    <script src="js/jquery.jqdrag-1.0.min.js"></script>
+    <script src="js/jquery.mousewheel.min.js"></script>
+    <script src="js/jquery.jscrollbar-1.0.2.src.js"></script>
+    <script>
+        $(function(){
+            $('#js_m_container').jscrollbar({showYBar:false,borderRadius:0,width:14});
+            /*setInterval(function(){
+                $('#move_msg').animate({'scrollTop':120},600,'swing').delay(3000).animate({'scrollTop':0},600,'swing');
+            },8000);
+
+            $(window).resize(function(){reset(120,80,20);})*/
+        });
+
+        function reset(height,startHeight,bottomHeight){
+            var docW = $(document).width(),
+                docH = $(document).height(),
+                rows = Math.floor((docH - startHeight - bottomHeight) / (height+10)), //当前可容纳的行数
+                new_rows = rows,
+                new_cols = 0;
+            var mgroup = $('.m_group,.m_group_double');
+            /*mgroup.each(function(i){
+                var w = $(this).width(), //每一组的宽度
+                    h = $(this).height(), //每一组的高度
+                    col = w / (height * 2 + 20), //当前的列数
+                    row = h / (height + 10), //当前的行数
+                    total = col * row; //总共的tile数目(按照tile_double的大小计算)
+
+                //console.log('第'+i+'组:[width:'+w+',height:'+h+'],[col:'+col+',row:'+row+']');
+                //console.log('currentRows:',rows,'row:',row);
+                if(row !== rows){ //重新排列后行数不相等
+                    col = Math.ceil(total / rows); //新列数 = 总共的tile数目 / 行数
+                    console.log('total:',total,'new Totals:', rows * col,'rows:',rows,'col:',col);
+                    //纠正列数
+                    //col = Math.max(new_rows,rows - Math.floor((rows * col - total) / rows));
+                    $(this).width(col * (height * 2 + 20));
+                    $(this).height(rows * (height + 10));
+                    //console.log('total:',total,'new Totals:', rows * col);
+                }
+            });*/
+            //$('#js_m_container').css({'height':docH - startHeight - bottomHeight - 2 +'px'}).jscrollbar('updateUI');
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+@font-face {
+    font-family: 'IcoMoon';
+    src: url('../font/IcoMoon.eot');
+    src: url('../font/IcoMoon.eot?#iefix') format('embedded-opentype'),
+    url('../font/IcoMoon.svg#IcoMoon') format('svg'),
+    url('../font/IcoMoon.woff') format('woff'),
+    url('../font/IcoMoon.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: 'Segoe UI Light', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    background: slateblue;
+    margin: 0;
+    padding: 0;
+}
+
+.m_group_double{
+    width: 1040px;
+    height: 520px;
+    margin-right: 50px;
+}
+.m_group{
+    width: 520px;
+    height: 520px;
+    margin-right: 50px;
+}
+
+/*==头部样==*/
+.m_header{
+    height: 80px;
+    line-height: 80px;
+}
+h1.start{
+    font-size: 50px;
+}
+h2.user_info{
+    font-size: 28px;
+}
+.user_face{
+    width: 40px;
+    height: 40px;
+    top: 10px;
+}
+
+.icon_f{
+    font-family: "IcoMoon",sans-serif;
+}
+.icon_font{
+    font-family: "IcoMoon",sans-serif;
+    font-size: 60px;
+    line-height: 85px;
+    text-align: center;
+    display: block;
+}
+.m_content{
+    overflow: hidden;
+}
+.m_content li{
+    margin: 5px;
+    float: left;
+}
+.ie6 .m_content li{
+    display: inline;
+}
+.m_content_wraper{
+    width: 2800px;
+}
+.m_container{
+    height: 540px;
+    width: 100%;
+}
+
+/*==底部样式==*/
+footer.m_footer{
+    left: 0;
+    bottom: 0;
+    height: 20px;
+    background: rgba(0,0,0,0.7);
+    z-index: 1;
+    width: 100%;
+    text-align: right;
+    text-indent: 10px;
+}

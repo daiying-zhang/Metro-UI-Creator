@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/dialog.css" />
+    <link rel="stylesheet" href="css/button.css" />
+    <style>
+        html,body{
+            padding: 10px;
+            margin: 0;
+            background: burlywood;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+     <!--<div data-role="m_dialog" class="m_dialog bg_blue">
+         <div class="m_dialog_title">Your PC will restart in 15 minutes 38 seconds</div>
+         <div class="m_dialog_content">We highly recommend that you print this tutorial. Your PC will restart during the Windows 8 installation process, so having a printed copy will
+             help you follow the steps if you're unable to return to this webpage.</div>
+         <div class="m_dialog_button_group">
+             <button class="bg_marine">Restart Now</button>
+             <button class="bg_marine">Cancle</button>
+         </div>
+     </div>-->
+     <button id='dialogit' class="m_button bg_color_green">Dialog IT</button>
+     <script src="js/jquery-1.8.1.min.js"></script>
+    <script>
+        ;(function($){
+            $.mDialog = function(title,message,fun){
+               var html = [
+                    '<div class="m_dialog_cover"></div>',
+                    '<div data-role="m_dialog" class="m_dialog bg_color_blue">',
+                    '    <div class="m_dialog_title">{@title}</div>',
+                    '    <div class="m_dialog_content">{@message}</div>',
+                    '    <div class="m_dialog_button_group">',
+                    '        <button class="m_button bg_color_marine" data-role="ok">&nbsp;Ok&nbsp;</button>',
+                    '        <button class="m_button bg_color_marine" data-role="cancel">Cancle</button>',
+                    '    </div>',
+                    '</div>'
+               ],
+               dialog = $(html.join('').replace(/{@message}/g,message).replace(/{@title}/,title));
+               $('body').append(dialog);
+               dialog.find('button').bind('click',function(e){
+                    var t = $(e.target),
+                        dataRole = t.attr('data-role');
+                   if(dataRole === 'ok'){
+                        fun && fun('BUTTON_OK');
+                   }else{
+                       fun && fun('BUTTON_CANCEL');
+                   }
+                   dialog.fadeOut('fast').remove();
+                   dialog = null;
+               })
+            }
+
+           $('#dialogit').click(function(){
+               $.mDialog(
+                       'Your PC will restart in 15 minutes 38 seconds',
+                       'We highly recommend that you print this tutorial. Your PC will ' +
+                               'restart during the Windows 8 installation process, so having a printed copy will' +
+                                ' help you follow the steps if you\'re unable to return to this webpage.'
+                       ,function(btn){
+                           console.log('You click the '+ btn +' button');
+                       }
+               )
+           })
+
+        })(jQuery)
+    </script>
+</body>
+</html>

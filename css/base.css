@@ -1,0 +1,219 @@
+@font-face {
+    font-family: 'IcoMoon';
+    src: url('../font/IcoMoon.eot');
+    src: url('../font/IcoMoon.eot?#iefix') format('embedded-opentype'),
+    url('../font/IcoMoon.svg#IcoMoon') format('svg'),
+    url('../font/IcoMoon.woff') format('woff'),
+    url('../font/IcoMoon.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+    font-family: 'Segoe UI Light', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+}
+h1,h2,h3,h4,h5,h6,p{
+    padding: 0;
+    margin: 0;
+    font-weight: normal;
+}
+img{
+    border: 0;
+}
+ul,li{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.mr10{
+    margin-right: 10px;
+}
+.ml10{
+    margin-left: 10px;
+}
+.mt10{
+    margin-top: 10px;
+}
+.mb10{
+    margin-bottom: 10px;
+}
+.w960{
+    width: 960px;
+}
+.w980{
+    width: 980px;
+}
+.w1000{
+    width: 1000px;
+}
+.w100{
+    width: 100%;
+}
+.pr{
+    position: relative;
+}
+.pa{
+    position: absolute;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+/*==背景色==*/
+.bg_color_magenta {
+    background: #FF0097
+}
+.bg_color_purple {
+    background: #6E155F
+}
+.bg_color_teal {
+    background: #4EB3B9
+}
+.bg_color_lime {
+    background:#96B232
+}
+.bg_color_brown {
+    background:#A05000
+}
+.bg_color_pink {
+    background:#E671B8
+}
+.bg_color_orange {
+    background:#DE9317
+}
+.bg_color_blue {
+    background:#1BA1E2
+}
+.bg_color_red {
+    background:#E51400
+}
+.bg_color_darkred {
+    background: #b91d47;
+}
+.bg_color_green {
+    background:#00a300
+}
+.bg_color_marine {
+    background:#034888
+}
+.bg_color_white {
+    background: white;
+}
+.bg_color_black {
+    background: black;
+}
+/*==前景色==*/
+.fg_color_magenta {
+    color: #FF0097
+}
+.fg_color_purple {
+    color: #6E155F
+}
+.fg_color_teal {
+    color: #4EB3B9
+}
+.fg_color_lime {
+    color:#96B232
+}
+.fg_color_brown {
+    color:#A05000
+}
+.fg_color_pink {
+    color:#E671B8
+}
+.fg_color_orange {
+    color:#DE9317
+}
+.fg_color_blue {
+    color:#1BA1E2
+}
+.fg_color_red {
+    color:#E51400
+}
+.fg_color_darkred{
+    color: #b91d47;
+}
+.fg_color_green {
+    color:#00a300
+}
+.fg_color_marine {
+    color:#034888
+}
+.fg_color_white {
+    color:white
+}
+.fg_color_black {
+    color:black;
+}
+/*==边框色==*/
+.bd_color_magenta {
+    color: #FF0097
+}
+.bd_color_purple {
+    color: #6E155F
+}
+.bd_color_teal {
+    color: #4EB3B9
+}
+.bd_color_lime {
+    color:#96B232
+}
+.bd_color_brown {
+    color:#A05000
+}
+.bd_color_pink {
+    color:#E671B8
+}
+.bd_color_orange {
+    color:#DE9317
+}
+.bd_color_blue {
+    color:#1BA1E2
+}
+.bd_color_red {
+    color:#E51400
+}
+.bd_color_darkred{
+    color: #b91d47;
+}
+.bd_color_green {
+    color:#00a300
+}
+.bd_color_marine {
+    color:#034888
+}
+.bd_color_white {
+    color:white
+}
+.bd_color_black {
+    color:black
+}
+
+.oh{
+    overflow: hidden;
+}
+.show{
+    display: block;
+}
+.hide{
+    display: none;
+}
+
+.clearfix:after{
+    content: ' ';
+    clear: both;
+    height: 0;
+    display: block;
+    visibility: hidden;
+}
+.ie6 .clearfix{
+    height: 1%
+}
+.ie7 .clearfix{
+    min-height: 1%
+}
+
+.icon_font{
+    font-family: "IcoMoon",sans-serif;
+}
