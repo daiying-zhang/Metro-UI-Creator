@@ -15,22 +15,32 @@
     padding: 0 27px 26px 0;
     margin: 0;
     float: left;
+    background-repeat: no-repeat;
+    background-position: 0 1000px;
 }
 .m-rating .m-rating-hover{
     background-position: 0 -52px;
+}
+.m-rating .m-rating-final{
+    background-position: 0 -26px;
 }
 .m-rating-small .m-rating-small-item{
     display: block;
     padding: 0 14px 13px 0;
     margin: 0;
     float: left;
+    background-repeat: no-repeat;
+    background-position: 0 1000px;
 }
 .m-rating-small .m-rating-small-hover{
     background-position: 0 -26px;
 }
+.m-rating-small .m-rating-small-final{
+    background-position: 0 -13px;
+}
 .m-rating .m-rating-score{
     height: 26px;
-    width: 50%;
+    width: 0;
     background-position: 0 -26px;
 }
 .m-rating-small{
@@ -41,6 +51,6 @@
 }
 .m-rating-small .m-rating-small-score{
     height: 13px;
-    width: 50%;
+    width: 0;
     background-position: 0 -13px;
 }
