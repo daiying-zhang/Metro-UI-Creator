@@ -290,11 +290,11 @@
     <script>
         $(function(){
             $('#js-m-container').jscrollbar({showYBar:false,borderRadius:0,width:14});
-            /*setInterval(function(){
+            setInterval(function(){
                 $('#move-msg').animate({'scrollTop':120},600,'swing').delay(3000).animate({'scrollTop':0},600,'swing');
             },8000);
 
-            $(window).resize(function(){reset(120,80,20);})*/
+            $(window).resize(function(){reset(120,80,20);})
         });
 
         function reset(height,startHeight,bottomHeight){
@@ -304,7 +304,7 @@
                 new_rows = rows,
                 new_cols = 0;
             var mgroup = $('.m-group,.m-group-double');
-            /*mgroup.each(function(i){
+            mgroup.each(function(i){
                 var w = $(this).width(), //每一组的宽度
                     h = $(this).height(), //每一组的高度
                     col = w / (height * 2 + 20), //当前的列数
@@ -322,8 +322,8 @@
                     $(this).height(rows * (height + 10));
                     //console.log('total:',total,'new Totals:', rows * col);
                 }
-            });*/
-            //$('#js-m-container').css({'height':docH - startHeight - bottomHeight - 2 +'px'}).jscrollbar('updateUI');
+            });
+            $('#js-m-container').css({'height':docH - startHeight - bottomHeight - 2 +'px'}).jscrollbar('updateUI');
 
         }
     </script>
