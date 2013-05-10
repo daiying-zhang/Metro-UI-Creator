@@ -60,6 +60,9 @@ ul,li{
 .fr{
     float: right;
 }
+.bold{
+    font-weight: bold;
+}
 /*==背景色==*/
 .bg-color-magenta {
     background: #FF0097
@@ -148,46 +151,46 @@ ul,li{
 }
 /*==边框色==*/
 .bd-color-magenta {
-    color: #FF0097
+    border-color: #FF0097
 }
 .bd-color-purple {
-    color: #6E155F
+    border-color: #6E155F
 }
 .bd-color-teal {
-    color: #4EB3B9
+    border-color: #4EB3B9
 }
-.bd-color-lime {
-    color:#96B232
+.bd-border-color-lime {
+    border-color:#96B232
 }
 .bd-color-brown {
-    color:#A05000
+    border-color:#A05000
 }
 .bd-color-pink {
-    color:#E671B8
+    border-color:#E671B8
 }
 .bd-color-orange {
-    color:#DE9317
+    border-color:#DE9317
 }
 .bd-color-blue {
-    color:#1BA1E2
+    border-color:#1BA1E2
 }
 .bd-color-red {
-    color:#E51400
+    border-color:#E51400
 }
 .bd-color-darkred{
-    color: #b91d47;
+    border-color: #b91d47;
 }
 .bd-color-green {
-    color:#00a300
+    border-color:#00a300
 }
 .bd-color-marine {
-    color:#034888
+    border-color:#034888
 }
 .bd-color-white {
-    color:white
+    border-color:white
 }
 .bd-color-black {
-    color:black
+    border-color:black
 }
 
 .oh{
