@@ -33,10 +33,21 @@
     padding: 10px;
 }
 .tile-content img{
+    width: 120%;
+    height: auto;
+    margin-top: -10px;
+    margin-left: -10px;
+}
+.icon-img{
+    display: block;
+    text-align: center;
+}
+.icon-img img{
     width: 60px;
     height: 60px;
     position: relative;
-    top: 5px;
+    margin:0;
+    top: 10px;
 }
 .tile-title{
     display: block;
@@ -48,11 +59,12 @@
     padding: 5px;
     z-index: 0;
 }
-.title-title-icon{
+
+.tile-title-icon {
     font-size: 30px;
     margin-left: 5px;
 }
-.title-title-icon img{
+.tile-title-icon img{
     width: 30px;
     height: 30px;
 }
@@ -62,8 +74,5 @@
     right:5px;
     padding: 5px 5px 5px 20px;
     z-index: 0;
-}
-.tile-desktop{
-    background: url(../images/desktop.png) 50% 50% no-repeat;
-    background-size: cover;
+    font-weight: bold;
 }

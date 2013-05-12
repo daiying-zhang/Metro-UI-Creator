@@ -65,4 +65,5 @@
             clearInterval(this.slideTimer)
         }
     }
+    $('[data-role="tile-slider"]').tileslider();
 })(jQuery);
