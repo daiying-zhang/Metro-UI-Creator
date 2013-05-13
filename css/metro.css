@@ -30,6 +30,9 @@ html,body{
     height: 520px;
     margin-right: 50px;
 }
+[class*=m-group]:last-child{
+    margin-right: 0;
+}
 
 /*==头部样==*/
 .m-header{
@@ -69,7 +72,10 @@ h2.user-info{
     display: inline;
 }
 .m-content-wraper{
-    width: 3800px;
+    width: 3320px;
+}
+.ie6 .m-content-wraper,.ie7 .m-content-wraper,.ie8 .m-content-wraper{
+    width: 3370px;
 }
 .m-container{
     height: 540px;

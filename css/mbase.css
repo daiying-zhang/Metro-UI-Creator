@@ -88,6 +88,9 @@ ul,li{
 .bg-color-blue {
     background:#1BA1E2
 }
+.bg-color-darkblue{
+    background:#00828b
+}
 .bg-color-red {
     background:#E51400
 }
@@ -100,11 +103,23 @@ ul,li{
 .bg-color-marine {
     background:#034888
 }
+.bg-color-gray {
+    background:lightgray
+}
 .bg-color-white {
     background: white;
 }
 .bg-color-black {
     background: black;
+}
+.bg-color-info{
+    background:#00a300
+}
+.bg-color-warn{
+    background:orange
+}
+.bg-color-error{
+    background:#b91d47
 }
 /*==前景色==*/
 .fg-color-magenta {
@@ -131,6 +146,9 @@ ul,li{
 .fg-color-blue {
     color:#1BA1E2
 }
+.fg-color-darkblue{
+    color:#00828b
+}
 .fg-color-red {
     color:#E51400
 }
@@ -143,11 +161,23 @@ ul,li{
 .fg-color-marine {
     color:#034888
 }
+.fg-color-gray {
+    color:lightgray
+}
 .fg-color-white {
     color:white
 }
 .fg-color-black {
-    color:black;
+    color:black
+}
+.fg-color-info{
+    color:#00a300
+}
+.fg-color-warn{
+    color:orange
+}
+.fg-color-error{
+    color:#b91d47
 }
 /*==边框色==*/
 .bd-color-magenta {
@@ -174,6 +204,9 @@ ul,li{
 .bd-color-blue {
     border-color:#1BA1E2
 }
+.bd-color-darkblue{
+    border-color:#00828b
+}
 .bd-color-red {
     border-color:#E51400
 }
@@ -186,11 +219,23 @@ ul,li{
 .bd-color-marine {
     border-color:#034888
 }
+.bd-color-gray {
+    border-color:lightgray;
+}
 .bd-color-white {
     border-color:white
 }
 .bd-color-black {
     border-color:black
+}
+.bd-color-info{
+    border-color:#00a300
+}
+.bd-color-warn{
+    border-color:orange
+}
+.bd-color-error{
+    border-color:#b91d47
 }
 
 .oh{

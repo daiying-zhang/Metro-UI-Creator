@@ -357,17 +357,21 @@
     <script src="../js/tile.src.js"></script>
     <script>
         $(function(){
-            $('#js-m-container').jscrollbar({showYBar:false,borderRadius:0,width:14});
-            /*setInterval(function(){
-                $('#move-msg').animate({'scrollTop':120},600,'swing').delay(3000).animate({'scrollTop':0},600,'swing');
-            },8000);*/
+            $('#js-m-container').jscrollbar({
+                showYBar:false,
+                borderRadius:0,
+                width:14,
+                keyMoveAmount: 125,
+                mouseMoveAmount: 125
+            });
             reset(120,80,14);
             $(window).resize(function(){reset(120,80,14);})
         });
 
         function reset(height,startHeight,bottomHeight){
-            var docW = $(document).width(),
-                docH = $(document).height(),
+            //alert('reset');
+            var docW = $(document.body).width(),
+                docH = $(document.body).height(),
                 rows = Math.floor((docH - startHeight - bottomHeight) / (height+10)), //当前可容纳的行数
                 new_rows = rows,
                 new_cols = 0;

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <link href="../css/mbase.css" rel="stylesheet" />
+    <link href="../css/mslider.css" rel="stylesheet" />
+    <title></title>
+</head>
+<body>
+    <div>Current Value = <span id="log1" class="fg-color-red">75</span></div>
+    <div class="m-slider bg-color-gray mb10" id="slider1" data-role="m-slider" style="width:600px">
+        <div class="complete bg-color-darkblue" style="width:450px"></div>
+        <div class="trigger bg-color-black" style="left:450px;"></div>
+    </div>
+    <div>Current Value = <span id="log2" class="fg-color-red">75</span></div>
+    <div class="m-slider bg-color-gray mb10" id="slider2" data-role="m-slider" style="width:600px">
+        <div class="complete bg-color-green" style="width:450px"></div>
+        <div class="trigger bg-color-red" style="left:450px;"></div>
+    </div>
+    <div>Current Value = <span id="log3" class="fg-color-red">0</span></div>
+    <div class="m-slider-vertical bg-color-gray" id="slider3" data-vertical="true" data-role="m-slider" style="height:200px">
+        <div class="complete bg-color-orange"></div>
+        <div class="trigger bg-color-black"></div>
+    </div>
+
+    <script src="../js/jquery-1.8.1.min.js"></script>
+    <script>
+
+        function log(msg,ele){
+            $('#'+ele).html(msg);
+        }
+
+        (function($){
+
+            $.fn.mSlider = function(){
+                return this.each(function(){
+                    var $this = $(this),
+                        trigger = $this.find('.trigger'),
+                        complete = $this.find('.complete'),
+                        offsetStartX = $this.offset().left,
+                        offsetStartY = $this.offset().top,
+                        width = $this.width(),
+                        height = $this.height(),
+                        isVertical = ($this.attr('data-vertical') == 'true');
+
+                    function setTriggerPos(loc){
+                        if(isVertical){
+                            trigger.css('bottom', height - loc + 'px');
+                            complete.css('height',height - loc + 'px');
+                            trigger.data('data-value', 100 * (height - loc) / (height - 10));
+                            //console.log(100 * (height - loc) / (height - 10));
+                        }else{
+                            trigger.css('left', loc + 'px');
+                            complete.css('width',loc+'px');
+                            trigger.data('data-value', 100 * loc / (width - 10));
+                            //console.log(100 * loc / (width - 10));
+                        }
+                        $this.trigger('change',[trigger.data('data-value')])
+                    }
+
+                    //click the slider
+                    $this.bind('mousedown.mslider',function(e){
+                        var loc;
+                        if(isVertical){
+                            loc =  e.pageY - offsetStartY;
+                            loc = Math.max(5, Math.min(loc, height - 5));
+                            setTriggerPos(loc + 5);
+                        }else{
+                            loc =  e.pageX - offsetStartX;
+                            loc = Math.max(5, Math.min(loc, width - 5));
+                            setTriggerPos(loc - 5);
+                        }
+                        $this.trigger('changed',[trigger.data('data-value')]);
+                        return false;
+                    })
+                    //drag the trigger
+                    trigger.bind('mousedown.mslider',function(e){
+                        var mouseX = e.pageX,
+                            mouseY = e.pageY,
+                            trigX = parseInt(trigger.css('left')),
+                            trigY = parseInt(trigger.css('top'));
+                        $(document).bind('mousemove.mslider',function(e){
+                            var loc = 0;
+                            if(isVertical){
+                                loc =  e.pageY - offsetStartY;
+                                loc = Math.max(10, Math.min(loc, height));
+                            }else{
+                                loc =  e.pageX - offsetStartX;
+                                loc = Math.max(0, Math.min(loc, width - 10));
+                            }
+                            setTriggerPos(loc);
+                        })
+                        $(document).bind('mouseup.mslider',function(e){
+                            $this.trigger('changed',[trigger.data('data-value')]);
+                            $(document).unbind('mousemove.mslider');
+                            $(document).unbind('mouseup.mslider');
+
+                        })
+                        return false;
+                    })
+                })
+            }
+            //auto init
+            $('[data-role="m-slider"]').mSlider();
+        })(jQuery)
+
+        $('#slider1').on('change',function(e,val){
+            log(val,'log1');
+        });
+        $('#slider2').on('changed',function(e,val){
+            log(val,'log2');
+        });
+        $('#slider3').on('change',function(e,val){
+            log(val,'log3');
+        });
+
+    </script>
+</body>
+</html>

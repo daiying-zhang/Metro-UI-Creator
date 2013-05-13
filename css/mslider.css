@@ -1,0 +1,31 @@
+.m-slider{
+    font-size: 10px;
+    height: 10px;
+    width: auto;
+    position: relative;
+}
+.m-slider-vertical{
+    height: 200px;
+    width: 10px;
+    position: relative;
+}
+.m-slider-vertical .trigger{
+    height: 10px;
+    width: 10px;
+    bottom: 0;
+    position: absolute;
+}
+.m-slider-vertical .complete{
+    width:100%;
+    bottom: 0;
+    position: absolute;
+}
+.m-slider div{
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.m-slider .trigger{
+    width: 10px;
+}

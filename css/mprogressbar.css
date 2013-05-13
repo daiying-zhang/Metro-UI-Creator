@@ -1,0 +1,16 @@
+.m-progressbar,.m-progressbar.small{
+    width: 100%;
+    font-size: 1px;
+    height: 5px;
+    margin: 5px 0 ;
+}
+.m-progressbar.middle{
+    height: 12px;
+}
+.m-progressbar.big{
+    height: 18px;
+}
+.m-progress{
+    height: 100%;
+    width: 0;
+}

@@ -134,6 +134,7 @@
 
             $('[data-role*="m-rating"]').mRating({
                 total_stars:5,
+                //TODO onraging,onfinish should be called like   $('ele').on('finish',function(){//......})
                 onrating:function(score){
                     $('#Rating').text(score)
                 },
