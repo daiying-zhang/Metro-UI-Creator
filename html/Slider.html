@@ -7,19 +7,28 @@
     <title></title>
 </head>
 <body>
-    <div>Current Value = <span id="log1" class="fg-color-red">75</span></div>
-    <div class="m-slider bg-color-gray mb10" id="slider1" data-role="m-slider" style="width:600px">
+    <div>Current Value = <span id="log0" class="fg-color-red">75</span></div>
+    <div class="m-slider bg-color-gray mb10" id="slider0" data-role="m-slider" style="width:600px">
         <div class="complete bg-color-darkblue" style="width:450px"></div>
         <div class="trigger bg-color-black" style="left:450px;"></div>
     </div>
-    <div>Current Value = <span id="log2" class="fg-color-red">75</span></div>
+    <div>setp = 10  ->  Current Value = <span id="log1" class="fg-color-red">20</span></div>
+    <div class="m-slider bg-color-gray mb10" id="slider1" data-step="10" data-role="m-slider" style="width:600px">
+        <div class="complete bg-color-darkblue" style="width:118px"></div>
+        <div class="trigger bg-color-black" style="left:118px;"></div>
+    </div>
+    <div>Current Value = <span id="log2" class="fg-color-red">10</span></div>
     <div class="m-slider bg-color-gray mb10" id="slider2" data-role="m-slider" style="width:600px">
-        <div class="complete bg-color-green" style="width:450px"></div>
-        <div class="trigger bg-color-red" style="left:450px;"></div>
+        <div class="complete bg-color-info" style="width:60px"></div>
+        <div class="trigger bg-color-black" style="left:60px;"></div>
     </div>
     <div>Current Value = <span id="log3" class="fg-color-red">0</span></div>
-    <div class="m-slider-vertical bg-color-gray" id="slider3" data-vertical="true" data-role="m-slider" style="height:200px">
+    <div class="m-slider-vertical bg-color-gray mr10 fl" data-step="10" id="slider3" data-role="m-slider" style="height:200px">
         <div class="complete bg-color-orange"></div>
+        <div class="trigger bg-color-black"></div>
+    </div>
+    <div class="m-slider-vertical bg-color-gray fl" id="slider4" data-role="m-slider" style="height:200px">
+        <div class="complete bg-color-info"></div>
         <div class="trigger bg-color-black"></div>
     </div>
 
@@ -31,86 +40,152 @@
         }
 
         (function($){
+            $.MSlider = function(ele){
+                var $this = ele,
+                    trigger = $this.find('.trigger'),
+                    complete = $this.find('.complete'),
+                    amount = $this.attr('data-step'), //drag step
+                    offsetStartX = $this.offset().left,
+                    offsetStartY = $this.offset().top,
+                    width = $this.width(),
+                    height = $this.height(),
+                    isVertical = $this.hasClass('m-slider-vertical'),
+                    barwidth = isVertical ? trigger.width() : trigger.height();
+                //set trigger position
+                function setTriggerPos(loc){
+                    var a = (amount ? amount / 100 * (isVertical ? height - barwidth : width  - barwidth) : -1); //every step to pix
+                    if(isVertical){
+                        if(a!==-1){
+                            loc = a * Math.floor((height - loc)/a);
+                        }else{
+                            loc = height - loc;
+                        }
+                        trigger.css('bottom', loc + 'px');
+                        complete.css('height',loc + 'px');
+                        $this.data('data-value', parseInt(100 * loc / (height - barwidth)));
+                    }else{
+                        a!==-1 && (loc = a * Math.floor(loc/a));
+                        trigger.css('left', loc + 'px');
+                        complete.css('width',loc + 'px');
+                        $this.data('data-value', parseInt(100 * loc / (width - barwidth)));
+                        //}
+                    }
+                    $this.trigger('change',[$this.data('data-value')]);
+                }
 
-            $.fn.mSlider = function(){
-                return this.each(function(){
-                    var $this = $(this),
-                        trigger = $this.find('.trigger'),
-                        complete = $this.find('.complete'),
-                        offsetStartX = $this.offset().left,
-                        offsetStartY = $this.offset().top,
-                        width = $this.width(),
-                        height = $this.height(),
-                        isVertical = ($this.attr('data-vertical') == 'true');
-
-                    function setTriggerPos(loc){
+                //click the slider
+                $this.bind('mousedown.mslider',function(e){
+                    var loc;
+                    if(isVertical){
+                        loc =  e.pageY - offsetStartY;
+                        loc = Math.max(barwidth/2, Math.min(loc, height - barwidth/2));
+                        setTriggerPos(loc + barwidth/2);
+                    }else{
+                        loc =  e.pageX - offsetStartX;
+                        loc = Math.max(barwidth/2, Math.min(loc, width - barwidth/2));
+                        setTriggerPos(loc - barwidth/2);
+                    }
+                    $this.trigger('changed',[$this.data('data-value')]);
+                    return false;
+                })
+                //drag the trigger
+                trigger.bind('mousedown.mslider',function(e){
+                    $(document).bind('mousemove.mslider',function(e){
+                        var loc = 0;
                         if(isVertical){
-                            trigger.css('bottom', height - loc + 'px');
-                            complete.css('height',height - loc + 'px');
-                            trigger.data('data-value', 100 * (height - loc) / (height - 10));
-                            //console.log(100 * (height - loc) / (height - 10));
+                            loc =  e.pageY - offsetStartY;
+                            loc = Math.max(barwidth, Math.min(loc, height));
+                        }else{
+                            loc =  e.pageX - offsetStartX;
+                            loc = Math.max(0, Math.min(loc, width - barwidth));
+                        }
+                        setTriggerPos(loc);
+                    })
+                    $(document).bind('mouseup.mslider',function(e){
+                        $this.trigger('changed',[$this.data('data-value')]);
+                        $(document).unbind('mousemove.mslider');
+                        $(document).unbind('mouseup.mslider');
+
+                    })
+                    return false;
+                })
+
+                /**
+                 * public method: get or set value
+                 * @example
+                 * $('#id').SliderValue(10) //set value
+                 * $('#id').SliderValue() //get value
+                 */
+                this.SliderValue = function(val){
+                    if(typeof val === 'undefined'){
+                        return $this.data('data-value') || 0
+                    }else{
+                        val = Math.max(0, Math.min(100, val));
+                        var loc = val / 100 * (isVertical ? height - barwidth : width  - barwidth);
+                        var a = (amount ? amount / 100 * (isVertical ? height - barwidth : width  - barwidth) : -1);
+                        a!==-1 && (loc = a * Math.floor(loc/a));
+                        a!==-1 && (val = val - val % 10);  //correct the value when has data-step attribute
+                        if(isVertical){
+                            trigger.css('bottom', loc + 'px');
+                            complete.css('height',loc + 'px');
+                            $this.data('data-value', val);
                         }else{
                             trigger.css('left', loc + 'px');
                             complete.css('width',loc+'px');
-                            trigger.data('data-value', 100 * loc / (width - 10));
-                            //console.log(100 * loc / (width - 10));
+                            $this.data('data-value', val);
                         }
-                        $this.trigger('change',[trigger.data('data-value')])
+                        $this.trigger('change',[$this.data('data-value')]);
+                        $this.trigger('changed',[$this.data('data-value')]);
                     }
+                }
+            }
 
-                    //click the slider
-                    $this.bind('mousedown.mslider',function(e){
-                        var loc;
-                        if(isVertical){
-                            loc =  e.pageY - offsetStartY;
-                            loc = Math.max(5, Math.min(loc, height - 5));
-                            setTriggerPos(loc + 5);
-                        }else{
-                            loc =  e.pageX - offsetStartX;
-                            loc = Math.max(5, Math.min(loc, width - 5));
-                            setTriggerPos(loc - 5);
-                        }
-                        $this.trigger('changed',[trigger.data('data-value')]);
-                        return false;
-                    })
-                    //drag the trigger
-                    trigger.bind('mousedown.mslider',function(e){
-                        var mouseX = e.pageX,
-                            mouseY = e.pageY,
-                            trigX = parseInt(trigger.css('left')),
-                            trigY = parseInt(trigger.css('top'));
-                        $(document).bind('mousemove.mslider',function(e){
-                            var loc = 0;
-                            if(isVertical){
-                                loc =  e.pageY - offsetStartY;
-                                loc = Math.max(10, Math.min(loc, height));
-                            }else{
-                                loc =  e.pageX - offsetStartX;
-                                loc = Math.max(0, Math.min(loc, width - 10));
-                            }
-                            setTriggerPos(loc);
-                        })
-                        $(document).bind('mouseup.mslider',function(e){
-                            $this.trigger('changed',[trigger.data('data-value')]);
-                            $(document).unbind('mousemove.mslider');
-                            $(document).unbind('mouseup.mslider');
+            $.fn.MSliderValue = function(val){
+                return this.data('MSlider').SliderValue(val);
+            }
 
-                        })
-                        return false;
-                    })
+            $.fn.mSlider = function(api){
+                return this.each(function(){
+                    $(this).data('MSlider', new $.MSlider($(this)));
                 })
             }
             //auto init
             $('[data-role="m-slider"]').mSlider();
         })(jQuery)
 
+        $('#slider0').on('change',function(e,val){
+            log(val,'log0');
+        });
         $('#slider1').on('change',function(e,val){
             log(val,'log1');
         });
-        $('#slider2').on('changed',function(e,val){
+        $('#slider2').on('change',function(e,val){
             log(val,'log2');
+            var complete = $('#slider2').find('.complete');
+            if(val <= 60){
+                complete.attr('class','complete bg-color-info')
+            }else if(val > 80){
+                complete.attr('class','complete bg-color-error')
+            }else if(val > 60){
+                complete.attr('class','complete bg-color-warn')
+            }
         });
         $('#slider3').on('change',function(e,val){
+            log(val,'log3');
+        }).on('changed',function(e,val){
+            log(val,'log3');
+        });
+        $('#slider4').on('change',function(e,val){
+            log(val,'log3');
+            var complete = $('#slider4').find('.complete');
+            if(val <= 60){
+                complete.attr('class','complete bg-color-info')
+            }else if(val > 80){
+                complete.attr('class','complete bg-color-error')
+            }else if(val > 60){
+                complete.attr('class','complete bg-color-warn')
+            }
+        }).on('changed',function(e,val){
             log(val,'log3');
         });
 

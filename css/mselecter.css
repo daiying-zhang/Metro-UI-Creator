@@ -1,0 +1,51 @@
+.m-select{
+    /*position: absolute;
+    left: 1px;
+    top: 4px;*/
+    position: relative;
+    display: inline-block;
+    _zoom:1;
+    _display: inline;
+    margin-right: 5px;
+}
+.m-select .icon{
+    position: absolute;
+    font-family: IcoMoon;
+    right: -2px;
+    _right: 2px;
+    top: 2px;
+    font-size: 21px;
+    height: 23px;
+    line-height: 23px;
+    cursor: default;
+}
+.m-select input{
+    height: 22px;
+    line-height: 22px;
+    text-indent: 2px;
+    outline: none;
+    padding: 0;
+    margin: 0;
+}
+.m-select ul{
+    display: none;
+    cursor: default;
+    border: 1px solid #CCC;
+    position: absolute;
+    left: 0;
+    _left:2px;
+    top: 26px;
+    line-height: 22px;
+    background: white;
+    min-width: 100%;
+    white-space: nowrap;
+}
+.z1000{
+    z-index: 1000;
+}
+.m-select ul li{
+    padding: 2px;
+}
+.m-select ul li:hover{
+    background: #09F;
+}

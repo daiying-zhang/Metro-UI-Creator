@@ -1,13 +1,15 @@
 .m-slider{
-    font-size: 10px;
-    height: 10px;
+    font-size: 0;
+    height: 8px;
     width: auto;
     position: relative;
 }
 .m-slider-vertical{
+    font-size: 0;
     height: 200px;
     width: 10px;
     position: relative;
+    overflow: hidden;
 }
 .m-slider-vertical .trigger{
     height: 10px;
@@ -16,7 +18,7 @@
     position: absolute;
 }
 .m-slider-vertical .complete{
-    width:100%;
+    padding-left: 100px;
     bottom: 0;
     position: absolute;
 }
@@ -27,5 +29,5 @@
     left: 0;
 }
 .m-slider .trigger{
-    width: 10px;
+    width: 8px;
 }
