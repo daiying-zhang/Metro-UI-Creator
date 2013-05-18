@@ -1,0 +1,32 @@
+.m-tab{
+    width: 100%;
+    border-bottom: 1px solid lightgray;
+    cursor: default;
+}
+.m-tab:after{
+    display: table;
+    line-height: 0;
+    content: "";
+    clear: both;
+}
+.m-tab .trigger{
+    padding: 5px 15px;
+    float: left;
+    margin-bottom: -1px;
+    background: white;
+}
+.m-tab .trigger:hover{
+    color:#09F
+}
+.m-tab li.active{
+    border: 1px solid lightgray;
+    border-bottom-color: transparent;
+    color:#09F
+}
+.tab-content{
+    padding: 5px;
+}
+.tab-content.border{
+    border: 1px solid lightgray;
+    border-top: none;
+}

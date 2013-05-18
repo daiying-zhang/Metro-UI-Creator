@@ -104,6 +104,9 @@ ul,li{
     background:#034888
 }
 .bg-color-gray {
+    background:gray
+}
+.bg-color-lightgray {
     background:lightgray
 }
 .bg-color-white {
@@ -162,7 +165,10 @@ ul,li{
     color:#034888
 }
 .fg-color-gray {
-    color:lightgray
+    color:gray
+}
+.fg-color-lightgray {
+    color:lightgray;
 }
 .fg-color-white {
     color:white
@@ -181,61 +187,64 @@ ul,li{
 }
 /*==边框色==*/
 .bd-color-magenta {
-    border-color: #FF0097
+    border: 1px solid #FF0097
 }
 .bd-color-purple {
-    border-color: #6E155F
+    border: 1px solid #6E155F
 }
 .bd-color-teal {
-    border-color: #4EB3B9
+    border: 1px solid #4EB3B9
 }
 .bd-border-color-lime {
-    border-color:#96B232
+    border: 1px solid #96B232
 }
 .bd-color-brown {
-    border-color:#A05000
+    border: 1px solid #A05000
 }
 .bd-color-pink {
-    border-color:#E671B8
+    border: 1px solid #E671B8
 }
 .bd-color-orange {
-    border-color:#DE9317
+    border: 1px solid #DE9317
 }
 .bd-color-blue {
-    border-color:#1BA1E2
+    border: 1px solid #1BA1E2
 }
 .bd-color-darkblue{
-    border-color:#00828b
+    border: 1px solid #00828b
 }
 .bd-color-red {
-    border-color:#E51400
+    border: 1px solid #E51400
 }
 .bd-color-darkred{
-    border-color: #b91d47;
+    border: 1px solid #b91d47;
 }
 .bd-color-green {
-    border-color:#00a300
+    border: 1px solid #00a300
 }
 .bd-color-marine {
-    border-color:#034888
+    border: 1px solid #034888
 }
 .bd-color-gray {
-    border-color:lightgray;
+    border: 1px solid gray;
+}
+.bd-color-lightgray {
+    border: 1px solid lightgray;
 }
 .bd-color-white {
-    border-color:white
+    border: 1px solid white
 }
 .bd-color-black {
-    border-color:black
+    border: 1px solid black
 }
 .bd-color-info{
-    border-color:#00a300
+    border: 1px solid #00a300
 }
 .bd-color-warn{
-    border-color:orange
+    border: 1px solid orange
 }
 .bd-color-error{
-    border-color:#b91d47
+    border: 1px solid #b91d47
 }
 
 .oh{
@@ -254,6 +263,20 @@ ul,li{
     height: 0;
     display: block;
     visibility: hidden;
+}
+
+[class^="icon-"]:before{
+    font-family: icomoon;
+    margin-right: 3px;
+}
+.icon-home:before{
+    content: "\0021";
+}
+.icon-phone:before{
+    content: "\0033";
+}
+.icon-setting:before{
+    content: "\0070";
 }
 .ie6 .clearfix{
     height: 1%

@@ -1,0 +1,23 @@
+.m-sidebar{
+    cursor: default;
+}
+.m-sidebar .sub-item a{
+    padding-left: 20px;
+}
+.m-sidebar .sub-item.m-menus{
+    position: relative;
+    float: none;
+    box-shadow: none;
+}
+.m-sidebar .m-menus a{
+    padding: 0;
+}
+.m-sidebar a{
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+}
+.m-sidebar a:hover{
+    background-color: #09F;
+}

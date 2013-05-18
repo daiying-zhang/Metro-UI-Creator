@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="../css/mbase.css" />
+    <link rel="stylesheet" href="../css/mlistview.css" />
+    <link rel="stylesheet" href="../css/mrating.css" />
+    <link rel="stylesheet" href="../css/mprogressbar.css" />
+    <title></title>
+</head>
+<body>
+<div style="height: 300px">
+    <ul class="m-listview">
+        <li class="bg-color-orange fg-color-white">
+            <img class="listview-icon" src="../images/Flash.png">
+            <div class="m-listview-data">
+                <div class="m-listview-title">OneNote 2013</div>
+                <div class="m-rating-small" data-role="m-rating-small" id="r1">
+                    <div class="m-rating-small-score"></div>
+                </div>
+                <p>1 RUB</p>
+            </div>
+        </li>
+
+        <li class="bg-color-darkblue fg-color-white">
+            <img class="listview-icon" src="../images/Dreamweaver.png">
+            <div class="m-listview-data">
+                <div class="m-listview-title">OneNote 2013</div>
+                <div class="m-progressbar bg-color-gray" id="p" >
+                    <div class="m-progress bg-color-blue" style="/*width: 46%*/"></div>
+                </div>
+                <p>1 RUB</p>
+            </div>
+        </li>
+
+        <li class="bg-color-red fg-color-white selected">
+            <img class="listview-icon" src="../images/Evernote.png">
+            <div class="m-listview-data">
+                <div class="m-listview-title">OneNote 2013</div>
+                <div class="m-rating-small"  data-role="m-rating-small" id="r2">
+                    <div class="m-rating-small-score"></div>
+                </div>
+                <p>1 RUB</p>
+            </div>
+        </li>
+
+        <li class="bg-color-green fg-color-white">
+            <img class="listview-icon" src="../images/Fireworks.png">
+            <div class="m-listview-data">
+                <div class="m-listview-title">OneNote 2013</div>
+                <div class="m-rating-small" data-role="m-rating-small" id="r3">
+                    <div class="m-rating-small-score"></div>
+                </div>
+                <p>1 RUB</p>
+            </div>
+        </li>
+    </ul>
+    <script src="../js/jquery-1.8.1.min.js"></script>
+    <script src="../js/progress.src.js"></script>
+    <script src="../js/rating.src.js"></script>
+    <script>
+        // for test
+        setTimeout(function(){
+            $('.m-progressbar').each(function(){
+                $(this).mProgressbar('setValue',Math.random()*99 + 1)
+            })
+            $('[data-role="m-rating-small"]').each(function(){
+                console.log($(this));
+                $(this).mRating('setScore',parseInt(Math.random()*100))
+            });
+        },500)
+    </script>
+</div>
+</body>
+</html>

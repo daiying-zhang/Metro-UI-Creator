@@ -27,7 +27,7 @@
     </style>
 </head>
 <body>
-    <ul class="m-menus" style="display: block; position: static">
+    <ul class="m-menus open" style="position: static">
         <li><a href="#">Items One</a></li>
         <li><a href="#">Items Two</a></li>
         <li><a href="#">Items Three</a></li>
@@ -67,46 +67,6 @@
         </ul>
     </div>
 <script src="../js/jquery-1.8.1.min.js"></script>
-<script>
-    ;(function($){
-        $.fn.mMenu = function(){
-            return this.each(function(){
-                var $this = $(this),
-                    closeAllMenus = function(){
-                        $('.m-menus:visible').each(function(i){
-                            var _self = $(this);
-                            if(_self.css('position') !== 'static'){
-                                    _self.slideUp('fast');
-                            }
-                        });
-                    },
-                    /**
-                     * 显示子菜单
-                     * @param holder 点击的一个菜单项或者是其他的触发器，必须有data-role="m-menu-trigger"属性
-                    */
-                    showSubMenu = function(holder){
-                        var submenu = holder.find('.m-menus:first');
-                        if(submenu && submenu.css('display') === 'block'){ //菜单已经显示，则关闭菜单
-                            submenu.slideUp('fast');
-                        }else{
-                            submenu && submenu.slideDown('fast'); //显示子菜单
-                        }
-                    }
-                ;
-                $this.bind('click.mmenu',function(e){
-                    e.stopPropagation();
-                    closeAllMenus();
-                    showSubMenu($this);
-                })
-                $('html').bind('click.mmenu',function(e){
-                    closeAllMenus()
-                })
-            })
-        }
-        $('[data-role="m-menu-trigger"]').each(function(){
-            $(this).mMenu();
-        })
-    })(jQuery)
-</script>
+<script src="../js/dropdown.src.js"></script>
 </body>
 </html>

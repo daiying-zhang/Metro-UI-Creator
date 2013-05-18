@@ -41,13 +41,13 @@
         /**
          * 滚动Tile
          */
-        _slideTile : function(_this){
-            var th = _this.settings.tileHeight;
-            _this.slideTop += th;
-            (_this.slideTop >= _this.tileCount * th) && (_this.slideTop = 0);
+        _slideTile : function(){
+            var th = this.settings.tileHeight;
+            this.slideTop += th;
+            (this.slideTop >= this.tileCount * th) && (this.slideTop = 0);
             this.obj.find('.tile-content:first').animate({
-                'margin-top': -_this.slideTop +'px'
-            } ,_this.slideTop == 0 ? 500 :_this.settings.speed);
+                'margin-top': -this.slideTop +'px'
+            } ,this.slideTop == 0 ? 500 :this.settings.speed);
         },
         /**
          * 启动定时器滚动Tile
@@ -55,7 +55,7 @@
         _start : function(){
             var _this = this;
             this.slideTimer = setInterval(function(){
-                _this._slideTile(_this)
+                _this._slideTile()
             },this.settings.showTime + _this.settings.speed)
         },
         /**

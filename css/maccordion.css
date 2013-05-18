@@ -1,0 +1,35 @@
+.m-accordion{
+
+}
+.m-accordion .acc-item{
+    margin-bottom: 3px;
+}
+
+.m-accordion .trigger{
+    text-decoration: none;
+    display: block;
+    line-height: 30px;
+}
+.m-accordion .trigger:before{
+    font-family: icomoon;
+    content: '\e0f1';
+    color:black
+}
+.m-accordion .active .trigger:before{
+    font-family: icomoon;
+    content: '\e0f3';
+    color:red
+}
+.m-accordion .acc-content{
+    padding: 5px;
+}
+.m-accordion .acc-item div{
+    display: none;
+}
+.m-accordion .active div{
+    display: block;
+}
+.m-accordion .active a{
+    color:#E51400;
+    font-weight: bold;
+}
