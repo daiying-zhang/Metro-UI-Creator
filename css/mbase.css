@@ -1,10 +1,10 @@
 @font-face {
-    font-family: 'IcoMoon';
-    src: url('../font/IcoMoon.eot');
-    src: url('../font/IcoMoon.eot?#iefix') format('embedded-opentype'),
-    url('../font/IcoMoon.svg#IcoMoon') format('svg'),
-    url('../font/IcoMoon.woff') format('woff'),
-    url('../font/IcoMoon.ttf') format('truetype');
+    font-family: 'IconMetro';
+    src: url('../font/IconMetro.eot');
+    src: url('../font/IconMetro.eot?#iefix') format('embedded-opentype'),
+    /*url('../font/IcoMetro.svg#IcoMetro') format('svg'),*/
+    url('../font/IconMetro.woff') format('woff'),
+    url('../font/IconMetro.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -266,17 +266,8 @@ ul,li{
 }
 
 [class^="icon-"]:before{
-    font-family: icomoon;
+    font-family: IcoMetro;
     margin-right: 3px;
-}
-.icon-home:before{
-    content: "\0021";
-}
-.icon-phone:before{
-    content: "\0033";
-}
-.icon-setting:before{
-    content: "\0070";
 }
 .ie6 .clearfix{
     height: 1%
@@ -286,5 +277,5 @@ ul,li{
 }
 
 .icon-font{
-    font-family: "IcoMoon",sans-serif;
+    font-family: "IconMetro",sans-serif;
 }

@@ -7,14 +7,15 @@
 }
 .m-select .icon{
     position: absolute;
-    font-family: IcoMoon;
-    right: -2px;
+    font-family: IconMetro;
+    right: 1px;
     _right: 2px;
     top: 2px;
     font-size: 21px;
     height: 23px;
     line-height: 23px;
     cursor: default;
+    font-style: normal;
 }
 .m-select input{
     height: 22px;

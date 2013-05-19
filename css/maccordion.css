@@ -9,16 +9,18 @@
     text-decoration: none;
     display: block;
     line-height: 30px;
+    text-indent: 5px;
 }
 .m-accordion .trigger:before{
-    font-family: icomoon;
-    content: '\e0f1';
-    color:black
+    font-family: IconMetro;
+    content: '\f105';
+    color:black;
+    font-weight: bold;
 }
 .m-accordion .active .trigger:before{
-    font-family: icomoon;
-    content: '\e0f3';
-    color:red
+    font-family: IconMetro;
+    content: '\f107';
+    color:black
 }
 .m-accordion .acc-content{
     padding: 5px;
@@ -30,6 +32,5 @@
     display: block;
 }
 .m-accordion .active a{
-    color:#E51400;
     font-weight: bold;
 }

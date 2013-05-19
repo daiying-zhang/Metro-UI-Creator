@@ -32,16 +32,16 @@
     position: absolute;
     z-index: 0;
     width: 0;
-    border-top: 15px #09F dashed;
-    border-right: 15px #09F dashed;
+    border-top: 15px #09F solid;
+    border-right: 15px #09F solid;
     border-left: 15px transparent dashed;
     border-bottom: 15px transparent dashed;
     top: 0;
     right: 0;
 }
 .m-listview li.selected:before{
-    font-family: icomoon;
-    content: "\e20c";
+    font-family: IconMetro;
+    content: "\e007";
     position: absolute;
     z-index: 1;
     top: -1px;

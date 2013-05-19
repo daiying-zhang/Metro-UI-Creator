@@ -27,12 +27,12 @@
 </head>
 <body>
 <div data-role="m-notice" class="m-notice-warn bg-color-darkred fg-color-white" style="left:10px;top: 50px">
-    <div class="m-notice-icon icon-font">&#xe126;</div>
+    <div class="m-notice-icon icon-font">&#xe0f4;</div>
     <div class="m-notice-title">Your PC will restart in 15 minutes</div>
     <div class="m-notice-message">
         We highly recommend that you print this tutorial. Your PC will restart during the Windows 8 ...
     </div>
-    <div class="m-notice-sicon icon-font">&#xe129;</div>
+    <div class="m-notice-sicon icon-font">&#xe0f5;</div>
     <div class="m-notice-close"></div>
 </div>
 <div data-role="m-notice" class="m-notice bg-color-green fg-color-white" style="left:420px;top: 50px">
@@ -112,11 +112,11 @@
                 /*右下角图标*/
                 sicon = notice.find('.m-notice-sicon');
             if(settings.type == 'warning'){
-                notice.find('.m-notice-title').before('<div class="m-notice-icon icon-font">&#xe126;</div>');
-                sicon.html('&#xe129;');
+                notice.find('.m-notice-title').before('<div class="m-notice-icon icon-font">&#xe0f4;</div>');
+                sicon.html('&#xe0f4;');
                 notice.attr('class','m-notice-warn bg-color-darkred  fg-color-white')
             }else if(settings.type=="info"){
-                sicon.html('&#xe1a5;');
+                sicon.html('&#xe0f8;');
             }
             // 自动填补空白区域开始
             var index = $.MetroUI.mNotice.count = $.MetroUI.mNotice.count || [0];

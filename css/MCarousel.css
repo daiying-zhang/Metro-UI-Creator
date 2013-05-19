@@ -31,12 +31,13 @@
     top: 50%;
     margin-top: -21px;
     display: block;
-    font-family: icomoon;
+    font-family: IconMetro;
     text-align: center;
     font-size: 25px;
     color: gray;
     cursor: default;
     opacity: 0.1;
+    font-style: normal;
 }
 .m-carousel:hover .pre, .m-carousel:hover .next{
     color: white;

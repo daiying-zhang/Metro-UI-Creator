@@ -2,9 +2,80 @@
 <html>
 <head>
     <meta charset="utf-8"/>
+    <link rel="stylesheet" href="../css/mbase.css" />
+    <link rel="stylesheet" href="../css/mform.css" />
     <title></title>
 </head>
 <body>
-
+    <form>
+        <label class="m-input">
+            <input type="checkbox" checked value="yes" />
+            <span class="m-input-tips">Love Me?</span>
+        </label>
+        <label class="m-input">
+            <input type="checkbox" disabled value="yes" />
+            <span class="m-input-tips">Don't Love Me?</span>
+        </label>
+        <br/>
+        <label class="m-input">
+            <input type="radio" checked name="sex" value="girl" />
+            <span class="m-input-tips">Girl?</span>
+        </label>
+        <label class="m-input">
+            <input type="radio" name="sex" value="boy" />
+            <span class="m-input-tips">Boy?</span>
+        </label>
+        <label class="m-input">
+            <input type="radio" name="sex" value="secret" disabled />
+            <span class="m-input-tips">Secret?</span>
+        </label>
+        <br/>
+        <label class="m-input">
+            <input type="radio" checked disabled name="sex1" value="girl" />
+            <span class="m-input-tips">Girl?</span>
+        </label>
+        <label class="m-input">
+            <input type="radio" disabled name="sex1" value="boy" />
+            <span class="m-input-tips">Boy?</span>
+        </label>
+        <br/>
+        <label class="m-input">
+            <input type="checkbox" class="m-input-switch" name="s1" value="boy" />
+            <span class="m-input-tips">Closed Mobile Location Service</span>
+        </label>
+        <label class="m-input">
+            <input type="checkbox"  checked class="m-input-switch" name="s1" value="boy" />
+            <span class="m-input-tips">Opened Mobile Location Service</span>
+        </label>
+        <br/>
+        <label class="m-input">
+            <input type="checkbox"  checked class="m-input-switch" name="s2" value="boy" />
+            <span class="m-input-tips">Open Mobile Location Service?</span>
+        </label>
+        <label class="m-input">
+            <input type="checkbox" disabled class="m-input-switch" name="s2" value="boy" />
+            <span class="m-input-tips">Open Mobile Location Service?</span>
+        </label>
+        <br/>
+        <label class="m-input">
+            <input type="text" value="Input some text" />
+            <button class="m-input-btn clear"></button>
+        </label>
+        <br/>
+        <label class="m-input">
+            <input type="text" value="Input some text" />
+            <button class="m-input-btn password"></button>
+        </label>
+        <br/>
+        <label class="m-input">
+            <input type="text" value="Input some text" />
+            <button class="m-input-btn search"></button>
+        </label>
+        <br/>
+        <label class="m-input">
+            <input type="text" value="Input some text" />
+            <button class="m-input-btn clear"></button>
+        </label>
+    </form>
 </body>
 </html>

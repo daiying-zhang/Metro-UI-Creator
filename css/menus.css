@@ -15,8 +15,8 @@
     display: block;
 }
 .m-nav li[data-role="m-menu-trigger"]:after{
-    font-family: icomoon;
-    content: "\e0f3";
+    font-family: IconMetro;
+    content: "\f107";
     position: relative;
     font-size: 13px;
     line-height: 30px;
