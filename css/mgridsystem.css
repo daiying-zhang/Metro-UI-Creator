@@ -1,0 +1,59 @@
+.m-grid{
+    width: 960px;
+    margin: 0 auto;
+}
+.m-grid .row{
+    width: 100%;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+.m-grid [class^="m-grid-"]{
+    float: left;
+    margin: 0 10px;
+}
+[class^="m-grid-"] .row:last-child{
+    margin-bottom: 0;
+}
+[class^="m-grid-"] [class^="m-grid-"]:last-child{
+    margin-right: 0;
+}
+[class^="m-grid-"] [class^="m-grid-"]:first-child{
+    margin-left: 0;
+}
+.m-grid .m-grid-1{
+    width: 60px;
+}
+.m-grid .m-grid-2{
+    width: 140px;
+}
+.m-grid .m-grid-3{
+    width: 220px;
+}
+.m-grid .m-grid-4{
+    width: 300px;
+}
+.m-grid .m-grid-5{
+    width: 380px;
+}
+.m-grid .m-grid-6{
+    width: 460px;
+}
+.m-grid .m-grid-7{
+    width: 540px;
+}
+.m-grid .m-grid-8{
+    width: 620px;
+}
+.m-grid .m-grid-9{
+    width: 700px;
+}
+.m-grid .m-grid-10{
+    width: 780px;
+}
+.m-grid .m-grid-11{
+    width: 860px;
+}
+.m-grid .m-grid-12{
+    width: 940px;
+}
+

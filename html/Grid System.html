@@ -2,9 +2,151 @@
 <html>
 <head>
     <meta charset="utf-8"/>
+    <link rel="stylesheet" href="../css/mbase.css" />
+    <link rel="stylesheet" href="../css/mgridsystem.css" />
     <title></title>
+    <style>
+        .m-grid div[class^="m-grid"] p{
+            border: 1px dashed #AAA;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+        }
+        .row .row{
+            /*==test===*/
+            border: 1px dashed orangered;
+        }
+    </style>
 </head>
 <body>
-
+    <div class="m-grid">
+        <div>1.Base Grid</div>
+        <div class="row">
+            <div class="m-grid-1">
+                <p>60px</p>
+            </div>
+            <div class="m-grid-11">
+                <p>860px</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="m-grid-2">
+                <p>140px</p>
+            </div>
+            <div class="m-grid-10">
+                <p>780px</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="m-grid-3">
+                <p>220px</p>
+            </div>
+            <div class="m-grid-9">
+                <p>700px</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="m-grid-4">
+                <p>300px</p>
+            </div>
+            <div class="m-grid-8">
+                <p>620px</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="m-grid-5">
+                <p>380px</p>
+            </div>
+            <div class="m-grid-7">
+                <p>540px</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="m-grid-6">
+                <p>460px</p>
+            </div>
+            <div class="m-grid-6">
+                <p>460px</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="m-grid-3">
+                <p>220px</p>
+            </div>
+            <div class="m-grid-4">
+                <p>280px</p>
+            </div>
+            <div class="m-grid-5">
+                <p>380px</p>
+            </div>
+        </div>
+        <div>2.Grid in Grid</div>
+        <div class="row">
+            <div class="m-grid-4">
+                <div>Left Column</div>
+                <div class="row">
+                    <div class="m-grid-1">
+                        <p>60px</p>
+                    </div>
+                    <div class="m-grid-3">
+                        <p>220px</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="m-grid-1">
+                        <p>60px</p>
+                    </div>
+                    <div class="m-grid-3">
+                        <p>220px</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="m-grid-4">
+                        <p>300px</p>
+                    </div>
+                </div>
+            </div>
+            <div class="m-grid-8">
+                <div>Right Column</div>
+                <div class="row">
+                    <div class="m-grid-3">
+                        <p>220px</p>
+                    </div>
+                    <div class="m-grid-5">
+                        <p>380px</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="m-grid-4">
+                <div class="row">
+                    <div class="m-grid-1">
+                        <p>60px</p>
+                    </div>
+                    <div class="m-grid-3">
+                        <p>220px</p>
+                    </div>
+                </div>
+            </div>
+            <div class="m-grid-8">
+                <div class="row">
+                    <div class="m-grid-3">
+                        <p>220px</p>
+                    </div>
+                    <div class="m-grid-5">
+                        <div class="row">
+                            <div class="m-grid-2">
+                                <p>140px</p>
+                            </div>
+                            <div class="m-grid-3">
+                                <p>220px</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
