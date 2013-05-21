@@ -41,11 +41,10 @@ h2.user-info{
     top: 10px;
 }
 
-.icon-f{
+/*.icon-f{
     font-family: "IconMetro",sans-serif;
-}
+}*/
 .icon-font{
-    font-family: "IconMetro",sans-serif;
     font-size: 60px;
     line-height: 85px;
     text-align: center;

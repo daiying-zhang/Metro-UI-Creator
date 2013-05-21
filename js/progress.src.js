@@ -7,10 +7,11 @@
  */
 (function($){
     $.fn.mProgressbar = function(opt,value){
-        //TODO to support changed event
         function setValue(node, value){
             value = Math.min(value,100); // value can't great then 100
-            node.data('data-value',value).animate({'width':value + '%'},300);
+            node.data('data-value',value).animate({'width':value + '%'},300,function(){
+                node.trigger('changed',[value])
+            });
         }
         if(opt === 'setValue'){ //set the progress value
             setValue($(this).find('.m-progress'),value || 0);

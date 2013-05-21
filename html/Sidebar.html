@@ -6,49 +6,35 @@
     <link rel="stylesheet" href="../css/msidebar.css" />
     <link rel="stylesheet" href="../css/menus.css" />
     <title></title>
-    <style>
-        .icon-home:before{
-            font-family: iconmetro;
-            content: "\e001";
-        }
-        .icon-phone:before{
-            font-family: iconmetro;
-            content: "\e03c";
-        }
-        .icon-setting:before{
-            font-family: iconmetro;
-            content: "\e090";
-        }
-    </style>
 </head>
 <body>
 <div style="width:180px">
     <ul class="m-sidebar bg-color-lightgray">
-        <li><a href="#" class="icon-home">Home</a></li>
-        <li><a href="#" class="icon-home">Sidebar Item</a>
+        <li><a href="#" data-icon="&#xe001;" class="fg-color-red bold">Home</a></li>
+        <li><a href="#" data-icon="&#xe229;" class="bold">Works</a>
             <ul class="sub-item">
-                <li><a href="#" class="icon-phone">Sidebar Item</a></li>
-                <li><a href="#" class="icon-phone">Sidebar Item</a></li>
+                <li><a href="#" data-icon="&#xe225;">JSHighlight</a></li>
+                <li><a href="#" data-icon="&#xe1f3;">jquery.jscrollbar</a></li>
             </ul>
         </li>
-        <li data-role="m-menu-trigger"><a class="icon-setting">Sidebar Item</a>
+        <li data-role="m-menu-trigger"><a data-icon="&#xe090;" class="bold">Setting</a>
             <ul class="m-menus bg-color-white sub-item green open">
-                <li><a href="#">About Me</a></li>
-                <li><a href="#">About Metro UI</a></li>
-                <li><a href="#">Contact Me</a></li>
-                <li><a href="#">Bug Report</a></li>
+                <li><a href="#">System Setting</a></li>
+                <li><a href="#">Global CSS</a></li>
+                <li><a href="#">JavaScript Lib</a></li>
+                <li><a href="#">DOM Structure</a></li>
             </ul>
         </li>
-        <li><a class="icon-home">Sidebar Item</a></li>
-        <li data-role="m-menu-trigger"><a href="#" class="icon-setting">Sidebar Item</a>
+        <li><a  data-icon="&#xe0bb;">Download Code</a></li>
+        <li data-role="m-menu-trigger"><a href="#"  data-icon="&#xe074;" class="bold">User Center</a>
             <ul class="m-menus bg-color-white sub-item green open">
-                <li><a href="#">About Me</a></li>
-                <li><a href="#">About Metro UI</a></li>
-                <li><a href="#">Contact Me</a></li>
-                <li><a href="#">Bug Report</a></li>
-                <li><a href="#">Suggestion</a></li>
+                <li><a href="#" data-icon="&#xe075;">About Me</a></li>
+                <li><a href="#" data-icon="&#xe04e;">About Metro UI</a></li>
+                <li><a href="#" data-icon="&#xe1c6;">Contact Me</a></li>
+                <li><a href="#" data-icon="&#xe1b1;">Bug Report</a></li>
+                <li><a href="#" data-icon="&#xe1a5;">Suggestion</a></li>
                 <li class="separate"></li>
-                <li><a href="#">Build Site Now</a></li>
+                <li><a href="#" data-icon="&#xe15d;">Build Site Now</a></li>
             </ul>
         </li>
     </ul>

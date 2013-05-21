@@ -53,7 +53,8 @@
             $('.'+type+'-item',$this).removeClass(type+'-final');
             $('.'+type+'-item:lt('+(index+1)+')',$this).addClass(type+'-hover');
             $('.'+type+'-item:gt('+index+')',$this).removeClass(type+'-hover');
-            (typeof options.onrating === 'function') && options.onrating(getScoreByIndex(index));
+            //(typeof options.onrating === 'function') && options.onrating(getScoreByIndex(index));
+
             $this.trigger('rating',[getScoreByIndex(index)]);
         }
         function getScoreByIndex(index){
@@ -102,7 +103,6 @@
                     function(){
                         ($this.data(DISABLE) !== false) && $this.data(DATAINDEX,i);
                         $this.trigger('finish',[getScoreByIndex(i)]);
-                        (typeof options.onfinish === 'function') && options.onfinish(getScoreByIndex(i));
                     }
                 )
             });
@@ -114,22 +114,6 @@
     }
 
     $('[data-role*="m-rating"]').mRating({
-        total_stars:5/*,
-         //TODO onraging,onfinish should be called like   $('ele').on('finish',function(){//......})
-         onrating:function(score){
-         $('#Rating').text(score)
-         },
-         onfinish:function(score){
-         alert('Your Score:'+score)
-         }*/
+        total_stars:5
     });
-    /*
-     $('.m-button').click(function(){
-     var _this = $(this),
-     forEle = $(_this.attr('data-for')),
-     fun = _this.attr('data-fun'),
-     param = _this.attr('data-param'),
-     result = forEle.mRating(fun,param);
-     (typeof result !=='undefined') && alert( result + '分');
-     })*/
 })(jQuery)

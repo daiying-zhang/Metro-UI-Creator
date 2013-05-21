@@ -10,7 +10,7 @@
 <body>
     <div>Static</div>
     <div class="m-rating" data-role="m-rating" data-stars="5" id="static-1">
-        <div class="m-rating-score" style="width: 75%"></div>
+        <div class="m-rating-score" style="width: 15%"></div>
     </div>
     <button class="m-button bg-color-green" data-for="#static-1" data-fun="setScore" data-param="70">SetScore To 70%</button>
     <div>Static Small</div>
@@ -36,14 +36,14 @@
                     fun = _this.attr('data-fun'),
                     param = _this.attr('data-param'),
                     result = forEle.mRating(fun,param);
-            (typeof result !=='undefined') && alert( result + '分');
+            //(typeof result !=='undefined') && alert( result + '分');
         })
 
         $('[data-role*="m-rating"]').on('rating',function(e,score){
             $('#Rating').text(score)
         })
         $('[data-role*="m-rating"]').on('finish',function(e,score){
-            alert('Your Score::'+score)
+            //alert('Your Score::'+score)
         })
     </script>
 </body>

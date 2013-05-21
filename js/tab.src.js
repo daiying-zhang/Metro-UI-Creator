@@ -24,11 +24,12 @@
         this._id = ele.attr('data-id');
         this._con = $('.tab-content[data-id="'+this._id+'"]');
         this._trigger = ele.children('.trigger');
+        this._type = ele.attr('data-event-type') || 'click';
 
         var _this = this;
         function init(){
             _this._show(ele.children('.active').index());
-            ele.bind('click.maccordion',function(e){
+            ele.bind(_this._type + '.maccordion',function(e){
                 var $ele = $(e.target);
                 if($ele.is('.trigger')){
                     _this._show($ele.index());

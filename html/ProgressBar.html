@@ -9,15 +9,15 @@
 <body>
     <div style="width:600px;">
         1. Default(small)
-        <div class="m-progressbar bg-color-gray" id="p" >
+        <div class="m-progressbar bg-color-lightgray" id="p" >
             <div class="m-progress bg-color-blue" style="width:45%"></div>
         </div>
         2. Middle
-        <div class="m-progressbar middle bg-color-gray" >
+        <div class="m-progressbar middle bg-color-lightgray" >
             <div class="m-progress bg-color-green"></div>
         </div>
         3. Big
-        <div class="m-progressbar big bg-color-gray" >
+        <div class="m-progressbar big bg-color-lightgray" id="p3" >
             <div class="m-progress bg-color-darkred" style="width:15%"></div>
         </div>
     </div>
@@ -27,12 +27,20 @@
         // for test
         setTimeout(function(){
             $('.m-progressbar').not(':first').each(function(){
-                $(this).mProgressbar('setValue',Math.random()*99 + 1)
+                var p = Math.random()*99 + 1;
+                console.log(p);
+                $(this).mProgressbar('setValue',p)
             })
             /*$('.m-progressbar').each(function(){
                 console.log($(this).mProgressbar('getValue'));
             });*/
         },1000)
+
+        $('.m-progressbar').on('changed',function(e,val){
+            console.log('current progress::'+val);
+        });
+
+        $('#p3').mProgressbar('setValue',100);
     </script>
 </body>
 </html>

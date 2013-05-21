@@ -54,34 +54,35 @@
             }
             //设置菜单宽度
             container.css('width',this._node.width() + 'px');
-            this._ul.css('width',(this._node.width()+2) + 'px');
             trig.appendTo(container); //加入图标
             this._field.appendTo(container); //加入文本框
-            this._ul.html(lis.join('')).appendTo(container); //加入菜单
+            this._ul.css('width',(this._node.width()+2) + 'px').html(lis.join('')).appendTo(container);
+            //this._ul.html(lis.join('')).appendTo(container); //加入菜单
             container.insertAfter(this._node);
             var _this = this;
             container.bind('click.mselect',function(e){
                 var ele = e.target,
-                        tar = ele.nodeName;
+                    tar = ele.nodeName;
                 if(tar == 'LI'){
                     _this.setSelectedIndex($(ele).index());
                 }else if(tar == 'INPUT' || tar == "I"){
                     $('div.m-select ul').hide(); //隐藏其他的下拉菜单
                     _this.show();
                     _this._field.focus();
-                    _this.setSelectedIndex(_this.selectedIndex,true)
+                    //_this.setSelectedIndex(_this.selectedIndex/*,true*/)
                     return false
                 }
 
             });
             this._field.on('keydown',function(e){
                 var keycode = e.keyCode,index;
-                if(/^(38|40)$/.test(keycode)){
+                //_this.selectedIndex != 0 && (_this.selectedIndex = -1);//从第一个开始选择
+                if(/(38|40)$/.test(keycode)){
                     index = _this.selectedIndex + (keycode === 38 ? -1 : 1);
                     _this.setSelectedIndex(index > (_this._length - 1) ? 0 : (index < 0 ? _this._length - 1 : index), true)
                 }
                 (keycode === 13) && _this.hide();
-                if(keycode !== 9){
+                if(keycode !== 9){ //不是Tab则阻止默认事件，是tab则转换焦点
                     return false
                 }
             }).on('focus',function(){
@@ -94,8 +95,8 @@
         }
         MSelect.prototype.setSelectedIndex = function(index, addClass){
             var lis = this.show().find('li').removeClass('bg-color-blue'),
-                    li = lis.eq(index),
-                    value = li.attr('data-value');
+                li = lis.eq(index),
+                value = li.attr('data-value');
             this._field.val(li.text());
             this._node[0].selectedIndex = index;
             this._node.trigger('change',[value]).trigger('select',[value]);
@@ -122,7 +123,7 @@
         //console.log('select:'+value);
     })
     $('#s1').on('change',function(e,value){
-        //console.log('change:'+value);
+        console.log('select:'+value);
     })
 </script>
 </body>

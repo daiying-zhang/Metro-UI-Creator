@@ -20,8 +20,10 @@
             if(obj){
                 return obj //TileSlider实例对象
             }else{
-                throw new Error('This object is not availbale!');
+                throw new Error('This object is not available!');
             }
+        }else{
+
         }
 
         return this.each(function(){
@@ -44,6 +46,7 @@
     Carousel.prototype = {
         /**
          * 滚动到下一个
+         * @name next
          */
         next : function(restart, pre){
             var setting = this.settings,
@@ -57,7 +60,7 @@
                 !next.length && (next = this.bar.find('i:last'));
             }
             next.attr('class',active);
-            this.slideTo(next.index(),restart)
+            this.slideTo(next.index(), restart, false)
         },
         /**
          * pre
@@ -66,15 +69,25 @@
             this.next(restart, true);
         },
         /**
-         * Slide To
+         * slideTo
+         * @param index
+         * @param restart
+         * @param changeBarClassc change the class of the nav bar
          */
-        slideTo : function(index, restart){
-            if(index > this.tileCount - 1){
+        slideTo : function(index, restart, changeBarClass){
+            var settings = null;
+            /*if(index > this.tileCount - 1){
                 index = this.tileCount - 1
             }else if(index < 0){
                 index = 0
-            }
+            }*/
+            index = Math.min(this.tileCount-1,Math.max(0,index));
             this.slideLeft = index * this.slideWidth;
+            if(changeBarClass !== false){
+                settings = this.settings;
+                $('.car-bar',this.obj).find('i').attr('class',settings.bar).eq(index).attr('class',settings.active)
+            }
+
             this.obj.stop().animate({
                 'margin-left': -this.slideLeft +'px'
             } ,this.slideLeft == 0 ? 500 :this.settings.speed);
@@ -104,7 +117,7 @@
                     _this.bar.find('i').attr('class',_this.settings.bar);
                     $ele.attr('class',_this.settings.active);
                     //_this.stop();
-                    _this.slideTo(index,true);
+                    _this.slideTo(index,true,false);
                 }else if($ele.is('i.next')){
                     //_this.stop();
                     _this.next(true)

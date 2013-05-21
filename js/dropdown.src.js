@@ -21,15 +21,14 @@
                  * 显示子菜单
                  * @param holder 点击的一个菜单项或者是其他的触发器，必须有data-role="m-menu-trigger"属性
                  */
-                    showSubMenu = function(holder){
+                showSubMenu = function(holder){
                     var submenu = holder.find('.m-menus:first');
                     if(submenu && submenu.css('display') === 'block'){ //菜单已经显示，则关闭菜单
                         submenu.slideUp('fast');
                     }else{
                         submenu && submenu.slideDown('fast'); //显示子菜单
                     }
-                }
-                ;
+                };
             $this.bind('click.mmenu',function(e){
                 e.stopPropagation();
                 closeAllMenus();

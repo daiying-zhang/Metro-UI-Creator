@@ -15,6 +15,18 @@
 .tile:hover, .tile-double:hover{
     outline: 3px #225a68 solid
 }
+.tile [data-icon], .tile-double [data-icon]{
+    font-family: IconMetro;
+    font-size: 60px;
+    line-height: 85px;
+    text-align: center;
+    display: block;
+}
+.tile-title[data-icon]{
+    line-height: 20px;
+    font-family: IconMetro;
+    font-size: 28px;
+}
 .tile a,.tile-double a{
     display: block;
     position: relative;
