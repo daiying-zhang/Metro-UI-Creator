@@ -88,3 +88,7 @@
     z-index: 0;
     font-weight: bold;
 }
+.tile-content p{
+    padding: 0;
+    margin-bottom: 5px;
+}

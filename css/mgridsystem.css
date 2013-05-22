@@ -6,10 +6,12 @@
     width: 100%;
     margin-bottom: 10px;
     overflow: hidden;
+    box-sizing: border-box;
 }
 .m-grid [class^="m-grid-"]{
     float: left;
     margin: 0 10px;
+    box-sizing: border-box;
 }
 [class^="m-grid-"] .row:last-child{
     margin-bottom: 0;
