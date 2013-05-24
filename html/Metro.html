@@ -240,6 +240,13 @@
                             <span class="tile-title">Evernote</span>
                         </a>
                     </li>
+
+	                <li class="tile-double bg-color-important">
+                        <a class="tile-content"href="javascript:void(0);">
+                            <span data-icon="&#xe19d;"></span>
+                            <span class="tile-title">Evernote</span>
+                        </a>
+                    </li>
                 </ul>
             </article>
             <article class="m-group oh fl">
@@ -281,8 +288,6 @@
                 </ul>
             </article>
             <article class="m-group oh fl">
-                <!--<header>
-                </header>-->
                 <ul class="m-content">
 
                     <li class="tile-double bg-color-pink"></li>
@@ -297,8 +302,6 @@
                 </ul>
             </article>
             <article class="m-group oh fl">
-                <!--<header>
-                </header>-->
                 <ul class="m-content">
 
                     <li class="tile-double bg-color-pink"></li>
@@ -313,8 +316,6 @@
                 </ul>
             </article>
             <article class="m-group oh fl">
-                <!--<header>
-                </header>-->
                 <ul class="m-content">
 
                     <li class="tile-double bg-color-pink"></li>
@@ -363,42 +364,34 @@
         });
 
         function reset(height,startHeight,bottomHeight){
-            //alert('reset');
-            var docW = $(document.body).width(),
-                docH = $(document.body).height(),
+            var docH = $(document.body).height(),
                 rows = Math.floor((docH - startHeight - bottomHeight) / (height+10)), //当前可容纳的行数
-                new_rows = rows,
-                new_cols = 0;
-            var mgroup = $('.m-group,.m-group-double');
-            var height = mgroup.height();
-            /*$('#js-m-container').css({
-                'position':'relative',
-                'top':(docH - height - startHeight - bottomHeight) / 2 +'px'
-            });*/
-            $('#js-m-conent-wrapper').css({
-                'margin-top':(docH - height - startHeight - bottomHeight) / 2 +'px'
+                mgroup = $('.m-group,.m-group-double');
+
+            var maxHeight=0,totalWidth=0;
+            mgroup.each(function(i){
+                var total = Math.ceil($('.tile',$(this)).length / 2) + $('.tile-double',$(this)).length;
+                var size = getSize(total, rows);
+                $(this).width(size.col * (height * 2 + 20));
+                $(this).height(size.row * (height + 10));
+                totalWidth += size.col * (height * 2 + 20) + 50;
+                maxHeight = Math.max(maxHeight, $(this).height());
             });
-            /*mgroup.each(function(i){
-                var w = $(this).width(), //每一组的宽度
-                    h = $(this).height(), //每一组的高度
-                    col = w / (height * 2 + 20), //当前的列数
-                    row = h / (height + 10), //当前的行数
-                    total = col * row; //总共的tile数目(按照tile_double的大小计算)
-
-                //console.log('第'+i+'组:[width:'+w+',height:'+h+'],[col:'+col+',row:'+row+']');
-                //console.log('currentRows:',rows,'row:',row);
-                if(row !== rows){ //重新排列后行数不相等
-                    col = Math.ceil(total / rows); //新列数 = 总共的tile数目 / 行数
-                    console.log('total:',total,'new Totals:', rows * col,'rows:',rows,'col:',col);
-                    //纠正列数
-                    //col = Math.max(new_rows,rows - Math.floor((rows * col - total) / rows));
-                    $(this).width(col * (height * 2 + 20));
-                    $(this).height(rows * (height + 10));
-                    //console.log('total:',total,'new Totals:', rows * col);
-                }
-            });*/
-            $('#js-m-container').css({'height':docH - startHeight  - 1 +'px'}).jscrollbar('updateUI');
-
+            //alert(totalWidth);
+            console.log((docH - maxHeight - startHeight - bottomHeight) / 2, maxHeight);
+            $('#js-m-conent-wrapper').css({
+                'margin-top':(docH - maxHeight - startHeight - bottomHeight) / 2 +'px',
+                'width':totalWidth+'px'
+            });
+            $('#js-m-container')
+                    .css({'height':docH - startHeight  - 1 +'px',})
+                    .jscrollbar('updateUI');
+            totalWidth = 0;
+	        maxHeight = 0;
+        }
+        function getSize(total, row){
+            var col = Math.ceil(total / row);
+            return {row:row - (row * col - total < col ? 0 : 1), col: col}
         }
     </script>
 </body>
