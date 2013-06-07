@@ -12,6 +12,8 @@
     float: left;
     margin: 0 10px;
     box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 [class*="m-grid-"] .row:last-child{
     margin-bottom: 0;
