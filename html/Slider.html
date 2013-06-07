@@ -7,29 +7,29 @@
     <title></title>
 </head>
 <body>
-    <div>Current Value = <span id="log0" class="fg-color-red">75</span></div>
-    <div class="m-slider bg-color-lightgray mb10" id="slider0" data-role="m-slider" style="width:600px">
-        <div class="complete bg-color-darkblue" style="width:450px"></div>
-        <div class="trigger bg-color-black" style="left:450px;"></div>
+    <div>Current Value = <span id="log0" class="fg-red">75</span></div>
+    <div class="m-slider bg-lightgray mb10" id="slider0" data-role="m-slider" style="width:600px">
+        <div class="complete bg-darkblue" style="width:450px"></div>
+        <div class="trigger bg-black" style="left:450px;"></div>
     </div>
-    <div>setp = 10  ->  Current Value = <span id="log1" class="fg-color-red">20</span></div>
-    <div class="m-slider bg-color-lightgray mb10" id="slider1" data-step="10" data-role="m-slider" style="width:600px">
-        <div class="complete bg-color-darkblue" style="width:118px"></div>
-        <div class="trigger bg-color-black" style="left:118px;"></div>
+    <div>setp = 10  ->  Current Value = <span id="log1" class="fg-red">20</span></div>
+    <div class="m-slider bg-lightgray mb10" id="slider1" data-step="10" data-role="m-slider" style="width:600px">
+        <div class="complete bg-darkblue" style="width:118px"></div>
+        <div class="trigger bg-black" style="left:118px;"></div>
     </div>
-    <div>Current Value = <span id="log2" class="fg-color-red">10</span></div>
-    <div class="m-slider bg-color-lightgray mb10" id="slider2" data-role="m-slider" style="width:600px">
-        <div class="complete bg-color-info" style="width:60px"></div>
-        <div class="trigger bg-color-black" style="left:60px;"></div>
+    <div>Current Value = <span id="log2" class="fg-red">10</span></div>
+    <div class="m-slider bg-lightgray mb10" id="slider2" data-role="m-slider" style="width:600px">
+        <div class="complete bg-info" style="width:60px"></div>
+        <div class="trigger bg-black" style="left:60px;"></div>
     </div>
-    <div>Current Value = <span id="log3" class="fg-color-red">0</span></div>
-    <div class="m-slider-vertical bg-color-lightgray mr10 fl" data-step="10" id="slider3" data-role="m-slider" style="height:200px">
-        <div class="complete bg-color-orange"></div>
-        <div class="trigger bg-color-black"></div>
+    <div>Current Value = <span id="log3" class="fg-red">0</span></div>
+    <div class="m-slider-vertical bg-lightgray mr10 fl" data-step="10" id="slider3" data-role="m-slider" style="height:200px">
+        <div class="complete bg-orange"></div>
+        <div class="trigger bg-black"></div>
     </div>
-    <div class="m-slider-vertical bg-color-lightgray fl" id="slider4" data-role="m-slider" style="height:200px">
-        <div class="complete bg-color-info"></div>
-        <div class="trigger bg-color-black"></div>
+    <div class="m-slider-vertical bg-lightgray fl" id="slider4" data-role="m-slider" style="height:200px">
+        <div class="complete bg-info"></div>
+        <div class="trigger bg-black"></div>
     </div>
 
     <script src="../js/jquery-1.8.1.min.js"></script>
@@ -163,11 +163,11 @@
             log(val,'log2');
             var complete = $('#slider2').find('.complete');
             if(val <= 60){
-                complete.attr('class','complete bg-color-info')
+                complete.attr('class','complete bg-info')
             }else if(val > 80){
-                complete.attr('class','complete bg-color-important')
+                complete.attr('class','complete bg-important')
             }else if(val > 60){
-                complete.attr('class','complete bg-color-warn')
+                complete.attr('class','complete bg-warn')
             }
         });
         $('#slider3').on('change',function(e,val){
@@ -179,11 +179,11 @@
             log(val,'log3');
             var complete = $('#slider4').find('.complete');
             if(val <= 60){
-                complete.attr('class','complete bg-color-info')
+                complete.attr('class','complete bg-info')
             }else if(val > 80){
-                complete.attr('class','complete bg-color-important')
+                complete.attr('class','complete bg-important')
             }else if(val > 60){
-                complete.attr('class','complete bg-color-warn')
+                complete.attr('class','complete bg-warn')
             }
         }).on('changed',function(e,val){
             log(val,'log3');

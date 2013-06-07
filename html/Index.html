@@ -2,13 +2,101 @@
 <html>
 <head>
     <meta charset="utf-8"/>
-    <title></title>
+    <title>QDKong</title>
     <link rel="stylesheet" href="../css/mbase.css" />
     <link rel="stylesheet" href="../css/mgridsystem.css" />
+    <link rel="stylesheet" href="../css/menus.css" />
+    <link rel="stylesheet" href="../css/mbutton.css" />
+    <style>
+        /*==Loqo区域==*/
+        .logo h1{
+            font-size: 56px;
+        }
+        .logo h1 span,
+        .logo p{
+            font-size: 14px;
+            position: absolute;
+            left: 235px;
+            top: 25px;
+        }
+        .logo p{
+            top: 40px;
+        }
+
+        .logo h1:before{
+            content: "<";
+            margin-left: -5px;
+        }
+        .logo h1:after{
+            content: "/>";
+            margin-left: 210px;
+        }
+
+        .logo span:before{
+            content: 'alt="';
+            font-size: 15px;
+        }
+        .logo p:before{
+            content: 'title="';
+            font-size: 15px;
+        }
+        .logo p:after,
+        .logo span:after{
+            content: '"';
+            font-size: 15px;
+        }
+
+        /*==导航==*/
+        #m-nav li{
+            border-bottom: 3px solid transparent;
+            padding:10px 15px;
+            margin: 0;
+            line-height: 20px;
+        }
+        #m-nav li:hover,#m-nav .active{
+            border-bottom: 3px solid #1BA1E2;
+        }
+        #snsicons a[data-icon]{
+            position: relative;
+            top: 4px;
+        }
+    </style>
 </head>
-<body class="m-grid1008">
-<div class="row">
-    <div class="grid-12 mb10 gridh-1 bg-orange"></div>
+<body>
+<header class="row mb10 gridh-1 bg-black fg-white">
+    <div class="m-grid1008">
+        <div class="grid-9 logo pr">
+            <!--<h1><a href="http://www.qdkong.com" class="fg-white" title="前端控-两个前端控的Coding旅途">QDKong<span>前端控</span></a></h1>-->
+            <h1>QDKong <span>前端控</span></h1>
+            <p>两个前端控的Coding旅途...</p>
+            <nav class="m-nav bg-black" id="m-nav">
+                <ul>
+                    <li class="active"><a href="###">首页</a></li>
+                    <li><a href="###">插件</a></li>
+                    <li><a href="###">代码片段</a></li>
+                    <li><a href="###">前端</a></li>
+                    <li><a href="###">关于我</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="grid-3 mt10 pt10 ta-right">
+            <div class="fs-m mt10 mb10" id="snsicons">
+                <a href="###" title="腾讯微博" class="fg-white" data-icon="&#xe2bd;"></a>
+                <a href="###" title="新浪围脖" class="fg-white" data-icon="&#xe2d5;"></a>
+                <a href="###" title="人人网" class="fg-white" data-icon="&#xe2d4;"></a>
+                <a href="###" class="m-button bg-blue m0 pl0">
+                    <span class="p5 bg-darkblue" data-icon="&#xe22c;"></span>
+                    <span class="fs-normal">订阅前端控</span>
+                </a>
+            </div>
+            <form class="pt10 fr">
+                <input class="mt10 bd-blue b1 solid p5 fl mr0" placeholder="前端控" id="keywords" />
+                <input class="fl mt10 ml0 bg-blue b1 bd-blue fg-white p5" type="submit" value="搜索" />
+            </form>
+        </div>
+    </div>
+</header>
+<div class="m-grid1008">
     <div class="grid-9">
         <p>Left</p>
     </div>

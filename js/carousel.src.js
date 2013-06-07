@@ -10,8 +10,8 @@
         var defaults = {
                 speed: 1000,
                 showTime:3000,
-                active:'bg-color-black',
-                bar:'bg-color-red'
+                active:'bg-black',
+                bar:'bg-red'
             },
             KEY_NAME = 'carousel',
             obj = this.data(KEY_NAME);
@@ -101,7 +101,7 @@
             //tw = this.obj.width();
             var nav = $('<div class="car-bar"></div>'), html = [], i=0;
             for(; i<this.tileCount; i+=1){
-                html.push('<i class="bg-color-',i==0?'black':'red','"></i>');
+                html.push('<i class="bg-',i==0?'black':'red','"></i>');
             }
             this.bar = nav.html(html.join('')).appendTo(this.obj);
             this.obj.find('.car-content').css('width',this.slideWidth+'px');

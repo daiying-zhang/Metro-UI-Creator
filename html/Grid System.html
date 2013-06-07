@@ -2,15 +2,19 @@
 <html>
 <head>
     <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
     <link rel="stylesheet" href="../css/mbase.css" />
     <link rel="stylesheet" href="../css/mgridsystem.css" />
     <title></title>
     <style>
-        .m-grid div[class^="m-grid"] p{
+        .m-grid div[class*="grid"] p,.m-grid1008 div[class*="grid"] p{
             border: 1px dashed #AAA;
-            height: 30px;
+            min-height: 30px;
+            height: 100%;
             line-height: 30px;
             text-align: center;
+            padding: 0;
+            margin: 0;
         }
         .row .row{
             /*==test===*/
@@ -20,127 +24,281 @@
 </head>
 <body>
     <div class="m-grid">
-        <div>1.Base Grid</div>
+        <h1>Grid System</h1>
+    </div>
+    <div class="m-grid">
+        <h2>1. grid 960</h2>
+        <h3>1.1 Base Grid</h3>
         <div class="row">
-            <div class="m-grid-1">
+            <!-- m-hide用于在一定分辨率下不显示 -->
+            <div class="m-hide-lt-768 grid-1">
                 <p>60px</p>
             </div>
-            <div class="m-grid-11">
+            <div class="grid-11">
                 <p>860px</p>
             </div>
         </div>
-        <div class="row">
-            <div class="m-grid-2">
+        <div class="m-hide-lt-480 row">
+            <div class="grid-2">
                 <p>140px</p>
             </div>
-            <div class="m-grid-10">
+            <div class="grid-10">
                 <p>780px</p>
             </div>
         </div>
         <div class="row">
-            <div class="m-grid-3">
+            <div class="grid-3">
                 <p>220px</p>
             </div>
-            <div class="m-grid-9">
+            <div class="grid-9">
                 <p>700px</p>
             </div>
         </div>
         <div class="row">
-            <div class="m-grid-4">
+            <div class="grid-4">
                 <p>300px</p>
             </div>
-            <div class="m-grid-8">
+            <div class="grid-8">
                 <p>620px</p>
             </div>
         </div>
         <div class="row">
-            <div class="m-grid-5">
+            <div class="grid-5">
                 <p>380px</p>
             </div>
-            <div class="m-grid-7">
+            <div class="grid-7">
                 <p>540px</p>
             </div>
         </div>
         <div class="row">
-            <div class="m-grid-6">
+            <div class="grid-6">
                 <p>460px</p>
             </div>
-            <div class="m-grid-6">
+            <div class="grid-6">
                 <p>460px</p>
             </div>
         </div>
         <div class="row">
-            <div class="m-grid-3">
+            <div class="grid-3">
                 <p>220px</p>
             </div>
-            <div class="m-grid-4">
+            <div class="grid-4">
                 <p>280px</p>
             </div>
-            <div class="m-grid-5">
+            <div class="grid-5">
                 <p>380px</p>
             </div>
         </div>
-        <div>2.Grid in Grid</div>
+        <h3>1.2 Grid in Grid</h3>
         <div class="row">
-            <div class="m-grid-4">
+            <div class="grid-4">
                 <div>Left Column</div>
                 <div class="row">
-                    <div class="m-grid-1">
+                    <div class="grid-1">
                         <p>60px</p>
                     </div>
-                    <div class="m-grid-3">
+                    <div class="grid-3">
                         <p>220px</p>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="m-grid-1">
+                    <div class="grid-1">
                         <p>60px</p>
                     </div>
-                    <div class="m-grid-3">
+                    <div class="grid-3">
                         <p>220px</p>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="m-grid-4">
+                    <div class="grid-4">
                         <p>300px</p>
                     </div>
                 </div>
             </div>
-            <div class="m-grid-8">
+            <div class="grid-8">
                 <div>Right Column</div>
                 <div class="row">
-                    <div class="m-grid-3">
+                    <div class="grid-3">
                         <p>220px</p>
                     </div>
-                    <div class="m-grid-5">
+                    <div class="grid-5">
                         <p>380px</p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="m-grid-4">
+            <div class="grid-4">
                 <div class="row">
-                    <div class="m-grid-1">
+                    <div class="grid-1">
                         <p>60px</p>
                     </div>
-                    <div class="m-grid-3">
+                    <div class="grid-3">
                         <p>220px</p>
                     </div>
                 </div>
             </div>
-            <div class="m-grid-8">
+            <div class="grid-8">
                 <div class="row">
-                    <div class="m-grid-3">
+                    <div class="grid-3">
                         <p>220px</p>
                     </div>
-                    <div class="m-grid-5">
+                    <div class="grid-5">
                         <div class="row">
-                            <div class="m-grid-2">
+                            <div class="grid-2">
                                 <p>140px</p>
                             </div>
-                            <div class="m-grid-3">
+                            <div class="grid-3">
                                 <p>220px</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="m-grid1008">
+        <h2>2. grid 1008</h2>
+        <h3>2.1 Base Grid</h3>
+        <div class="grid-12 mb10">
+            <p>.grid-12 --> 998px</p>
+        </div>
+        <div class="grid-12 mb10">
+            <!-- m-hide用于在一定分辨率下不显示 -->
+            <div class="m-hide-lt-768 grid-1">
+                <p>1 --> 74px</p>
+            </div>
+            <div class="grid-11">
+                <p>11 --> 914px</p>
+            </div>
+        </div>
+        <div class="m-hide-lt-480 grid-12 mb10">
+            <div class="grid-2">
+                <p>2 --> 158px</p>
+            </div>
+            <div class="grid-10">
+                <p>10 --> 830px</p>
+            </div>
+        </div>
+        <div class="grid-12 mb10">
+            <div class="grid-3">
+                <p>3 --> 242px</p>
+            </div>
+            <div class="grid-9">
+                <p>9 --> 746px</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="grid-4">
+                <p>4 --> 326px</p>
+            </div>
+            <div class="grid-8">
+                <p>8 --> 662px</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="grid-5">
+                <p>5 --> 410px</p>
+            </div>
+            <div class="grid-7">
+                <p>7 --> 578px</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="grid-6">
+                <p>6 --> 494px</p>
+            </div>
+            <div class="grid-6">
+                <p>6 --> 494px</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="grid-3">
+                <p>3 --> 242px</p>
+            </div>
+            <div class="grid-4">
+                <p>4 --> 326px</p>
+            </div>
+            <div class="grid-5">
+                <p>5 --> 410px</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="grid-1 gridh-1 bg-orange">
+            </div>
+            <div class="grid-2 gridh-1 bg-darkblue">
+            </div>
+            <div class="grid-3 gridh-1 bg-pink">
+            </div>
+            <div class="grid-1 gridh-1 bg-blue">
+            </div>
+            <div class="grid-2 gridh-1 bg-darkred">
+            </div>
+            <div class="grid-3 gridh-1 bg-orange">
+            </div>
+        </div>
+        <h3>2.2 Grid in Grid</h3>
+        <div class="row">
+            <div class="grid-4">
+                <div>Left Column</div>
+                <div class="row">
+                    <div class="grid-1">
+                        <p>1 --> 74px</p>
+                    </div>
+                    <div class="grid-3">
+                        <p>3 --> 242px</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="grid-1">
+                        <p>1 --> 74px</p>
+                    </div>
+                    <div class="grid-3">
+                        <p>3 --> 242px</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="grid-4">
+                        <p>4 --> 326px</p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-8">
+                <div>Right Column</div>
+                <div class="row">
+                    <div class="grid-3">
+                        <p>3 --> 242px</p>
+                    </div>
+                    <div class="grid-5">
+                        <p>5 --> 410px</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="grid-4">
+                <div class="row">
+                    <div class="grid-1">
+                        <p>1 --> 74px</p>
+                    </div>
+                    <div class="grid-3">
+                        <p>3 --> 242px</p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-8">
+                <div class="row">
+                    <div class="grid-3">
+                        <p>3 --> 242px</p>
+                    </div>
+                    <div class="grid-5">
+                        <div class="row">
+                            <div class="grid-2">
+                                <p>2 --> 158px</p>
+                            </div>
+                            <div class="grid-3">
+                                <p>3 --> 242px</p>
                             </div>
                         </div>
                     </div>

@@ -94,14 +94,14 @@
             })
         }
         MSelect.prototype.setSelectedIndex = function(index, addClass){
-            var lis = this.show().find('li').removeClass('bg-color-blue'),
+            var lis = this.show().find('li').removeClass('bg-blue'),
                 li = lis.eq(index),
                 value = li.attr('data-value');
             this._field.val(li.text());
             this._node[0].selectedIndex = index;
             this._node.trigger('change',[value]).trigger('select',[value]);
             this.selectedIndex = index;
-            addClass && li.addClass('bg-color-blue');
+            addClass && li.addClass('bg-blue');
         }
         MSelect.prototype.show = function(){
             return this._ul.show().addClass('z1000');
