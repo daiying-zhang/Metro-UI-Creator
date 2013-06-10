@@ -56,7 +56,9 @@ h5{
 h6{
     font-size: 16px;
 }
-
+a{
+    color: black;
+}
 a,a:active,a:hover{
     outline: none;
     text-decoration: none;
@@ -308,22 +310,22 @@ input{
 
 /*======位置/浮动控制======*/
 .pr{
-    position: relative;
+    position: relative!important;
 }
 .pa{
-    position: absolute;
+    position: absolute!important;
 }
 .ps{
-    position: static;
+    position: static!important;
 }
 .fl{
-    float: left;
+    float: left!important;
 }
 .fr{
-    float: right;
+    float: right!important;
 }
 .clr{
-    clear: both;
+    clear: both!important;
 }
 /*======颜色控制======*/
 /*==背景色==*/
@@ -370,10 +372,10 @@ input{
     background:#034888!important;
 }
 .bg-gray {
-    background:gray!important;
+    background:lightgray!important;
 }
 .bg-lightgray {
-    background:lightgray!important;
+    background:#f8f8f8!important;
 }
 .bg-bluelight{
     background: #eff4ff!important;
@@ -437,10 +439,10 @@ input{
     color:#034888!important;
 }
 .fg-gray {
-    color:gray!important;
+    color:lightgray!important;
 }
 .fg-lightgray {
-    color:lightgray!important;
+    color:#f8f8f8!important;
 }
 .fg-bluelight{
     color: #eff4ff!important;
@@ -504,10 +506,10 @@ input{
     border-color: #034888!important;
 }
 .bd-gray {
-    border-color: gray!important;
+    border-color: lightgray!important;
 }
 .bd-lightgray {
-    border-color: lightgray!important;
+    border-color: #f8f8f8!important;
 }
 .bd-bluelight{
     border-color: #eff4ff!important;
@@ -552,11 +554,17 @@ input{
     border-width: 5px;
     border-style: solid;
 }
-.bt0,
-.bb0,
-.bl0,
+.bt0{
+    border-top: 0;
+}
+.bb0{
+    border-bottom: 0;
+}
+.bl0{
+    border-left: 0;
+}
 .br0{
-    border-width: 0;
+    border-right: 0;
 }
 .solid{
     border-style: solid!important;

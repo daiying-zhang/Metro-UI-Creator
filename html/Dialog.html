@@ -3,12 +3,13 @@
 <head>
     <meta charset="utf-8"/>
     <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="../css/mbase.css" />
     <link rel="stylesheet" href="../css/mdialog.css" />
     <link rel="stylesheet" href="../css/mbutton.css" />
     <style>
         html,body{
-            padding: 10px;
+            padding: 0;
             margin: 0;
             background: burlywood;
             width: 100%;
@@ -27,13 +28,14 @@
          </div>
      </div>-->
      <button id='dialogit' class="m-button bg-green">Dialog IT</button>
+     <button id='dialogit1' class="m-button bg-red">Dialog IT(Width Cover Layer)</button>
      <script src="../js/jquery-1.8.1.min.js"></script>
     <script>
         ;(function($){
             $.MetroUI = $.MetroUI || {};
-            $.MetroUI.mDialog = function(title,message,fun){
+            $.MetroUI.mDialog = function(title,message,fun,cover){
                var html = [
-                    '<div class="m-dialog-cover"></div>',
+                    cover ? '<div class="m-dialog-cover"></div>' : "",
                     '<div data-role="m-dialog" class="m-dialog bg-blue">',
                     '    <div class="m-dialog-title">{@title}</div>',
                     '    <div class="m-dialog-content">{@message}</div>',
@@ -67,6 +69,18 @@
                        ,function(btn){
                            console.log('You click the '+ btn +' button');
                        }
+               )
+           })
+           $('#dialogit1').click(function(){
+               $.MetroUI.mDialog(
+                       'Your PC will restart in 15 minutes 38 seconds',
+                       'We highly recommend that you print this tutorial. Your PC will ' +
+                               'restart during the Windows 8 installation process, so having a printed copy will' +
+                                ' help you follow the steps if you\'re unable to return to this webpage.'
+                       ,function(btn){
+                           console.log('You click the '+ btn +' button');
+                       },
+                       true
                )
            })
 

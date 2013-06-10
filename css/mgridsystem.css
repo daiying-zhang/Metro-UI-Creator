@@ -176,7 +176,7 @@ margin: 0 auto;
     .m-grid,
     .m-grid [class*="grid-"],
     .m-grid1008,
-    .m-grid1008 [class*="grid-"]{
+    .m-grid1008 [class*="grid-"]:not([data-fixed-size]){
         width: 100%;
         margin-left: 0;
         margin-right: 0;
@@ -189,9 +189,8 @@ margin: 0 auto;
     .m-grid,
     .m-grid [class*="grid-"],
     .m-grid1008,
-    .m-grid1008 [class*="grid-"]
+    .m-grid1008 [class*="grid-"]:not([data-fixed-size])
     {
-        width: 100%;
         width: 100%;
         margin-left: 0;
         margin-right: 0;

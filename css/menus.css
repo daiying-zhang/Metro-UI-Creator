@@ -18,30 +18,41 @@
     font-family: IconMetro;
     content: "\f107";
     position: relative;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 30px;
-    top: 3px;
-    left: -2px;
+    top: 2px;
+    left: -1px;
 }
-.m-nav{
+.m-nav,
+.m-nav-trigger{
     height: 40px;
     background: dodgerblue;
     /*margin-top: 220px;*/
     font-size: 16px;
+    position: relative;
 }
-.m-nav ul li{
+.m-nav-trigger{
+    position: absolute;
+    right: 5px;
+    top: 0;
+    height: 100%;
+    line-height: 32px;
+    font-size: 26px;
+    display: none;
+}
+.m-nav > ul > li{
     line-height: 40px;
     margin: 0 10px;
     position: relative;
     float: left;
     cursor: pointer;
 }
-.m-nav ul li ul li{
+/*.m-nav ul li ul li{
     margin: 0;
     line-height: 30px;
     position: static;
     float: none;
-}
+}*/
 .m-nav .disabled{
     color:black;
 }
@@ -63,6 +74,10 @@
     height: 40px;
     line-height: 34px;
     color: white;
+}
+h1.m-site-name,
+h2.m-site-name{
+    margin: 0;
 }
 .m-site-name:after{
     content: "|";
@@ -110,4 +125,42 @@
     height: 1px;
     margin: 5px;
     cursor: default;
+}
+@media screen and (min-width:767px){
+    .m-nav>ul{
+        display: block!important;
+    }
+}
+@media screen and (max-width:768px){
+    .m-nav .m-nav-trigger{
+        display: block;
+        text-align: center;
+        cursor: pointer;
+    }
+    .m-nav ul,
+    .m-nav ul li{
+        clear: both;
+        width: 100%;
+        border-bottom: 1px solid white;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .m-nav ul{
+        padding: 0;
+        margin: 0;
+        border-bottom: 0;
+        border-top: 1px solid white;
+        display: none;
+    }
+    .m-nav li{
+        margin:1px 0 0 0!important;
+        text-indent: 10px;
+    }
+    .m-menus{
+        margin-top: 1px;
+    }
+    .m-site-name:after{
+        content: "";
+    }
 }

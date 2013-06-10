@@ -1,16 +1,21 @@
+.tile,
 .tile-double{
-    width: 250px;
-    height: 120px;
     overflow: hidden;
     position: relative;
     color: white;
+    margin: 5px;
+}
+.tile-double{
+    width: 250px;
+    height: 120px;
 }
 .tile{
     width: 120px;
     height: 120px;
-    overflow: hidden;
-    position: relative;
-    color: white;
+}
+.tile [class*="bg-img"],
+.tile-double [class*="bg-img"]{
+    background-size: 100% 100%;
 }
 .tile:hover, .tile-double:hover{
     outline: 3px #225a68 solid
@@ -30,15 +35,22 @@
 .tile a,.tile-double a{
     display: block;
     position: relative;
-    height: 100px;
-    width: 230px;
+    /*height: 100px;
+    width: 230px;*/
+    width: 100%;
+    height: 100%;
     color: white;
     text-decoration: none;
     overflow: hidden;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
 }
-.tile a{
+/*.tile a{
     width: 100px;
-}
+}*/
 .tile-content{
     display: block;
     height: 85px;
@@ -91,4 +103,11 @@
 .tile-content p{
     padding: 0;
     margin-bottom: 5px;
+}
+
+@media screen and (max-width: 480px){
+    *:not(.fixed-size)>.tile,*:not(.fixed-size)>.tile-double{
+        width: 100%;
+        margin: 5px 0;
+    }
 }

@@ -13,20 +13,20 @@
 <![endif]-->
 <head>
     <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <title></title>
     <link rel="stylesheet" href="../css/mbase.css" />
     <link rel="stylesheet" href="../css/mnotice.css" />
     <link rel="stylesheet" href="../css/mbutton.css" />
     <style>
         body{
-            padding: 10px;
             margin: 0;
             background: burlywood;
         }
     </style>
 </head>
 <body>
-<div data-role="m-notice" class="m-notice-warn bg-darkred fg-white" style="left:10px;top: 50px">
+<!--<div data-role="m-notice" class="m-notice-warn bg-darkred fg-white" style="left:10px;top: 50px">
     <div class="m-notice-icon icon-font">&#xe0f4;</div>
     <div class="m-notice-title">Your PC will restart in 15 minutes</div>
     <div class="m-notice-message">
@@ -42,9 +42,9 @@
     </div>
     <div class="m-notice-sicon icon-font">&#xe1a5;</div>
     <div class="m-notice-close"></div>
-</div>
-<button id='noticeit-warn' class="m-button bg-blue">Warn Notice</button>
-<button id='noticeit-info' class="m-button bg-blue">Info Notice</button>
+</div>-->
+<button id='noticeit-warn' class="m-button bg-warn">Warn Notice</button>
+<button id='noticeit-info' class="m-button bg-info">Info Notice</button>
 <script src="../js/jquery-1.8.1.min.js"></script>
 <script>
     ;(function($){
@@ -178,6 +178,17 @@
             $.MetroUI.mNotice(
                     'A Infomation Notice Dialog...',
                     'This is a infomation notice dialog that create by code!'
+            )
+            $.MetroUI.mNotice(
+                    'A Infomation Notice Dialog...',
+                    'This is a infomation notice dialog that create by code!',
+                    {
+                        /*fun:function(){
+                         console.log('Close the notice!');
+                         },*/
+                        type:'warning',
+                        duration:6000
+                    }
             )
         },3000);
 

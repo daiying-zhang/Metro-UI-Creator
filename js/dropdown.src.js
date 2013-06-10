@@ -42,4 +42,14 @@
     $('[data-role="m-menu-trigger"]').each(function(){
         $(this).mMenu();
     })
+
+    $('.m-nav-trigger').on('click',function(){
+        $(this).siblings('ul').toggle();
+        var t = $('.m-nav-trigger');
+        if(t.html() == "+"){
+            t.html('-')
+        }else{
+            t.html('+')
+        }
+    })
 })(jQuery)

@@ -1,9 +1,9 @@
 .m-listview{
-    -webkit-column-width:300px;
-    -moz-column-width:300px;
-    -ms-column-width:300px;
-    -o-column-width:300px;
-    column-width:300px;
+    /*-webkit-column-width:290px;
+    -moz-column-width:290px;
+    -ms-column-width:290px;
+    -o-column-width:290px;
+    column-width:290px;
     -webkit-column-gap:5px;
     -moz-column-gap:5px;
     -ms-column-gap:5px;
@@ -12,16 +12,20 @@
     column-gap:5px;
     writing-mode: tb-lr;
     *white-space:nowrap;
-    height: 100%;
+    height: 100%;*/
 }
 .m-listview li{
-    height: 52px;
-    width: 282px;
+    height: 70px;
+    width: 280px;
     padding: 5px;
     margin: 5px;
-    writing-mode: lr-tb;
+    /*writing-mode: lr-tb;*/
     display: inline-block;
     border: 4px solid transparent;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
 }
 .m-listview li.selected{
     border: 4px solid #09F;
@@ -51,9 +55,8 @@
     line-height: 19px;
 }
 .m-listview-data{
-    float: right;
-    width: 220px;
     height: 50px;
+    margin-left: 60px;
 }
 .m-listview li p{
     font-size: 13px;
@@ -67,4 +70,11 @@
 }
 .m-listview li:hover{
     outline: 3px solid #CCC;
+}
+
+@media screen and (max-width:480px){
+    .m-listview li{
+        width: 100%;
+        margin: 5px 0;
+    }
 }

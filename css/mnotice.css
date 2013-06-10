@@ -1,6 +1,6 @@
 .m-notice, .m-notice-warn{
-    width: 380px;
-    height: 70px;
+    width: 400px;
+    height: 90px;
     position: absolute;
     z-index: 9999999;
     top: 1px;
@@ -8,6 +8,9 @@
     padding: 10px;
     overflow: hidden;
     font-size: 14px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 
 .m-notice-icon{
@@ -48,4 +51,16 @@
 .m-notice-close:before{
     font-size: 18px;
     content: "\00d7";
+}
+
+@media screen and (max-width:768px){
+    .m-notice, .m-notice-warn{
+        width: 100%;
+    }
+
+}@media screen and (max-width:480px){
+    .m-notice-icon{
+        display: none;
+    }
+
 }

@@ -113,7 +113,7 @@
                     ele = e.target,
                     $ele = $(e.target);
                 _this.stop();
-                if($ele.is('i[class^="bg-color"]')){
+                if($ele.is('i[class^="bg-"]')){
                     _this.bar.find('i').attr('class',_this.settings.bar);
                     $ele.attr('class',_this.settings.active);
                     //_this.stop();
